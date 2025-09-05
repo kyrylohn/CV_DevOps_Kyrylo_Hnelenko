@@ -12,85 +12,142 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 }
 
 /**
- * 1. "Read more" functionality for Work Experience blocks
+ * Language switching functionality
  */
-const readmoreLinks = document.querySelectorAll('.readmore-link a');
+class LanguageSwitcher {
+  constructor() {
+    this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
+    this.langButtons = document.querySelectorAll('.lang-btn');
+    this.body = document.body;
 
-readmoreLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
+    this.init();
+  }
 
-    const readmoreContainer = link.closest('.readmore');
-    if (!readmoreContainer) return;
+  init() {
+    // Set initial language
+    this.setLanguage(this.currentLang);
 
-    readmoreContainer.classList.toggle('open');
+    // Add event listeners to language buttons
+    this.langButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetLang = button.getAttribute('data-lang');
+        this.setLanguage(targetLang);
+      });
+    });
+  }
 
-    const currentText = link.textContent.trim();
-    link.textContent = (currentText === '...see more') ? 'less' : '...see more';
+  setLanguage(lang) {
+    this.currentLang = lang;
+
+    // Update body class
+    this.body.classList.toggle('lang-uk', lang === 'uk');
+
+    // Update button states
+    this.langButtons.forEach(button => {
+      const buttonLang = button.getAttribute('data-lang');
+      button.classList.toggle('active', buttonLang === lang);
+    });
+
+    // Save to localStorage
+    localStorage.setItem('selectedLanguage', lang);
+
+    // Update document language attribute
+    document.documentElement.lang = lang;
+
+    // Update page title based on language
+    this.updatePageTitle(lang);
+
+    // Dispatch event so dynamic parts can react
+    document.dispatchEvent(new Event('languageChanged'));
+  }
+
+  updatePageTitle(lang) {
+    const titles = {
+      en: 'CV DevOps | Kyrylo Hnelenko',
+      uk: 'Резюме DevOps | Кирило Гнеленко'
+    };
+    document.title = titles[lang] || titles.en;
+  }
+}
+
+/**
+ * Universal "More/Less" toggle button initializer
+ */
+function initToggleButton({ buttonSelector, hiddenSelector, chevronId }) {
+  const btn = document.querySelector(buttonSelector);
+  const hidden = document.querySelector(hiddenSelector);
+  const chevron = chevronId ? document.getElementById(chevronId) : null;
+
+  if (!btn || !hidden) return;
+
+  btn.addEventListener('click', () => {
+    hidden.classList.toggle(hiddenSelector.replace('.', ''));
+
+    if (chevron) chevron.classList.toggle('rotate-icon');
+
+    const isExpanded = !hidden.classList.contains(hiddenSelector.replace('.', ''));
+    const buttonTextEn = btn.querySelector('span[data-lang="en"]');
+    const buttonTextUk = btn.querySelector('span[data-lang="uk"]');
+
+    if (buttonTextEn && buttonTextUk) {
+      buttonTextEn.textContent = isExpanded ? 'Less' : 'More';
+      buttonTextUk.textContent = isExpanded ? 'Менше' : 'Більше';
+    }
+
+    btn.setAttribute('aria-expanded', isExpanded);
   });
+}
+
+/**
+ * "Read more" functionality (delegated)
+ */
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('.readmore-link a');
+  if (!link) return;
+
+  event.preventDefault();
+  const readmoreContainer = link.closest('.readmore');
+  if (!readmoreContainer) return;
+
+  readmoreContainer.classList.toggle('open');
+  const currentLang = document.body.classList.contains('lang-uk') ? 'uk' : 'en';
+  const isExpanded = readmoreContainer.classList.contains('open');
+
+  link.textContent = currentLang === 'uk'
+    ? (isExpanded ? 'менше' : '...детальніше')
+    : (isExpanded ? 'less' : '...see more');
+
+  link.setAttribute('aria-expanded', isExpanded);
 });
 
 /**
- * 2. "More" button for hidden Work Experience cards
+ * Update dynamic content on language change
  */
-const btnShowMoreCards = document.querySelector('.btm-more');
-const hiddenCards = document.querySelectorAll('.card--hidden');
-const chevronIcon = document.getElementById('chevron-icon');
+function updateDynamicContent() {
+  const currentLang = document.body.classList.contains('lang-uk') ? 'uk' : 'en';
+  document.querySelectorAll('.readmore-link a').forEach(link => {
+    const container = link.closest('.readmore');
+    const isExpanded = container?.classList.contains('open');
 
-if (btnShowMoreCards) {
-  btnShowMoreCards.addEventListener('click', () => {
-    hiddenCards.forEach(card => {
-      card.classList.toggle('card--hidden');
-    });
-
-    if (chevronIcon) {
-      chevronIcon.classList.toggle('rotate-icon');
-    }
-
-    const buttonText = btnShowMoreCards.querySelector('span');
-    if (!buttonText) return;
-    buttonText.textContent = (buttonText.textContent === 'More') ? 'Less' : 'More';
+    link.textContent = currentLang === 'uk'
+      ? (isExpanded ? 'менше' : '...детальніше')
+      : (isExpanded ? 'less' : '...see more');
   });
 }
+document.addEventListener('languageChanged', updateDynamicContent);
 
 /**
- * 3. "More" button for Licenses and Certificates
+ * Initialize when DOM is loaded
  */
-const btnShowMoreLicenses = document.querySelector('.btm-more-licenses');
-const hiddenLicenses = document.querySelector('.card--hidden-licenses');
-const chevronIconLicenses = document.getElementById('chevron-icon-licenses');
+document.addEventListener('DOMContentLoaded', () => {
+  new LanguageSwitcher();
 
-if (btnShowMoreLicenses && hiddenLicenses) {
-  btnShowMoreLicenses.addEventListener('click', () => {
-    hiddenLicenses.classList.toggle('card--hidden-licenses');
+  // Initialize toggle buttons
+  initToggleButton({ buttonSelector: '.btm-more', hiddenSelector: '.card--hidden', chevronId: 'chevron-icon' });
+  initToggleButton({ buttonSelector: '.btm-more-licenses', hiddenSelector: '.card--hidden-licenses', chevronId: 'chevron-icon-licenses' });
+  initToggleButton({ buttonSelector: '.btm-more-courses', hiddenSelector: '.card--hidden-courses', chevronId: 'chevron-icon-courses' });
 
-    if (chevronIconLicenses) {
-      chevronIconLicenses.classList.toggle('rotate-icon');
-    }
-
-    const buttonText = btnShowMoreLicenses.querySelector('span');
-    if (!buttonText) return;
-    buttonText.textContent = (buttonText.textContent === 'More') ? 'Less' : 'More';
-  });
-}
-
-/**
- * 4. "More" button for Courses
- */
-const btnShowMoreCourses = document.querySelector('.btm-more-courses');
-const hiddenCourses = document.querySelector('.card--hidden-courses');
-const chevronIconCourses = document.getElementById('chevron-icon-courses');
-
-if (btnShowMoreCourses && hiddenCourses) {
-  btnShowMoreCourses.addEventListener('click', () => {
-    hiddenCourses.classList.toggle('card--hidden-courses');
-
-    if (chevronIconCourses) {
-      chevronIconCourses.classList.toggle('rotate-icon');
-    }
-
-    const buttonText = btnShowMoreCourses.querySelector('span');
-    if (!buttonText) return;
-    buttonText.textContent = (buttonText.textContent === 'More') ? 'Less' : 'More';
-  });
-}
+  // Ensure readmore text matches current language
+  updateDynamicContent();
+});

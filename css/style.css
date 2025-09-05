@@ -18,6 +18,75 @@
     color: #000;
   }
   
+  /* Language switcher */
+  .language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(70, 95, 133, 0.1);
+  }
+  
+  .lang-btn {
+    padding: 8px 16px;
+    border: 2px solid #465f85;
+    background: transparent;
+    color: #465f85;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 45px;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .lang-btn:hover {
+    background: #465f85;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(70, 95, 133, 0.2);
+  }
+  
+  .lang-btn.active {
+    background: #465f85;
+    color: white;
+    box-shadow: 0 4px 12px rgba(70, 95, 133, 0.3);
+  }
+  
+  /* Language toggle logic */
+  [data-lang="uk"] {
+    display: none;
+  }
+  
+  body.lang-uk [data-lang="en"] {
+    display: none;
+  }
+  
+  body.lang-uk [data-lang="uk"] {
+    display: block;
+  }
+  
+  body.lang-uk .lang-btn[data-lang="uk"] {
+    background: #465f85;
+    color: white;
+  }
+  
+  body.lang-uk .lang-btn[data-lang="en"] {
+    background: transparent;
+    color: #465f85;
+  }
+  
   /* Main container */
   .main-container {
     background-color: #fff;
@@ -366,5 +435,13 @@
     .name {
       font-size: 32px;
     }
+    .language-switcher {
+      top: 10px;
+      right: 10px;
+      padding: 8px;
+    }
+    .lang-btn {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
   }
-  

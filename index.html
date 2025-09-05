@@ -22,6 +22,12 @@
   <script src="https://kit.fontawesome.com/a9e1192225.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="uk">УА</button>
+  </div>
+
   <div class="main-container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -31,11 +37,13 @@
       <div class="contacts-container">
         <p>
           <i class="fas fa-map-marker-alt"></i>
-          Dnipro
+          <span data-lang="en">Dnipro</span>
+          <span data-lang="uk">Дніпро</span>
         </p>
         <p>
           <i class="far fa-calendar-alt"></i>
-          May 16, 1994
+          <span data-lang="en">May 16, 1994</span>
+          <span data-lang="uk">16 травня 1994</span>
         </p>
         <p>
           <a class="link" href="tel:+380672923375">
@@ -44,7 +52,7 @@
           </a>
         </p>
         <p>
-          <a class="link" href="mailto:mr.onegin94@gmail.com">
+          <a class="link" href="mailto:kyrylohn@gmail.com">
             <i class="fas fa-envelope"></i>
             kyrylohn@gmail.com
           </a>
@@ -53,58 +61,82 @@
 
       <!-- Tech Skills -->
       <div class="tech-skills-container">
-        <h3>Tech Skills</h3>
+        <h3 data-lang="en">Tech Skills</h3>
+        <h3 data-lang="uk">Технічні навички</h3>
         <ul>
           <li><span class="skills">CI/CD (GitLab CI/CD, Jenkins)</span></li>
           <li><span class="skills">Docker, Kubernetes, Terraform</span></li>
           <li><span class="skills">VMware vCenter, ESXi</span></li>
-          <li><span class="skills">Cloud &amp; Virtualization (AWS, Azure)</span></li>
-          <li><span class="skills">Automation &amp; Scripting (Bash, Python)</span></li>
-          <li><span class="skills">Monitoring (Grafana, Prometheus, Zabbix, Loki)</span></li>
+          <li><span class="skills" data-lang="en">Cloud &amp; Virtualization (AWS, Azure)</span>
+              <span class="skills" data-lang="uk">Хмарні технології та віртуалізація (AWS, Azure)</span></li>
+          <li><span class="skills" data-lang="en">Automation &amp; Scripting (Bash, Python)</span>
+              <span class="skills" data-lang="uk">Автоматизація та скрипти (Bash, Python)</span></li>
+          <li><span class="skills" data-lang="en">Monitoring (Grafana, Prometheus, Zabbix, Loki)</span>
+              <span class="skills" data-lang="uk">Моніторинг (Grafana, Prometheus, Zabbix, Loki)</span></li>
           <li><span class="skills">Linux (Ubuntu Server, CentOS)</span></li>
-          <li><span class="skills">Networking &amp; Security</span></li>
+          <li><span class="skills" data-lang="en">Networking &amp; Security</span>
+              <span class="skills" data-lang="uk">Мережі та безпека</span></li>
           <li><span class="skills">GIT, GitLab, GitHub</span></li>
           <li><span class="skills">Nginx, Apache</span></li>
-          <li><span class="skills">Database Management (MySQL, PostgreSQL)</span></li>
+          <li><span class="skills" data-lang="en">Database Management (MySQL, PostgreSQL)</span>
+              <span class="skills" data-lang="uk">Управління базами даних (MySQL, PostgreSQL)</span></li>
           <li><span class="skills">Windows Server 2008/2012+</span></li>
           <li><span class="skills">Active Directory</span></li>
           <li><span class="skills">OSI TCP/IP</span></li>
-          <li><span class="skills">Automation &amp; Infrastructure as Code</span></li>
+          <li><span class="skills" data-lang="en">Automation &amp; Infrastructure as Code</span>
+              <span class="skills" data-lang="uk">Автоматизація та інфраструктура як код</span></li>
         </ul>
       </div>
 
       <!-- Soft Skills -->
       <div class="soft-skills-container">
-        <h3>Soft Skills</h3>
+        <h3 data-lang="en">Soft Skills</h3>
+        <h3 data-lang="uk">Гнучкі навички</h3>
         <ul>
-          <li><span class="skills">Debugging &amp; Troubleshooting</span></li>
-          <li><span class="skills">GTD (Getting Things Done)</span></li>
-          <li><span class="skills">Agile Methodology</span></li>
-          <li><span class="skills">Scrum Framework</span></li>
-          <li><span class="skills">Technical Writing &amp; Documentation</span></li>
-          <li><span class="skills">Team Collaboration &amp; Communication</span></li>
-          <li><span class="skills">Adaptability &amp; Flexibility</span></li>
-          <li><span class="skills">Proactivity &amp; Initiative</span></li>
-          <li><span class="skills">Continuous Learning</span></li>
+          <li><span class="skills" data-lang="en">Debugging &amp; Troubleshooting</span>
+              <span class="skills" data-lang="uk">Налагодження та усунення проблем</span></li>
+          <li><span class="skills" data-lang="en">GTD (Getting Things Done)</span>
+              <span class="skills" data-lang="uk">GTD (Доведення справ до кінця)</span></li>
+          <li><span class="skills" data-lang="en">Agile Methodology</span>
+              <span class="skills" data-lang="uk">Agile методологія</span></li>
+          <li><span class="skills" data-lang="en">Scrum Framework</span>
+              <span class="skills" data-lang="uk">Scrum фреймворк</span></li>
+          <li><span class="skills" data-lang="en">Technical Writing &amp; Documentation</span>
+              <span class="skills" data-lang="uk">Технічне письмо та документація</span></li>
+          <li><span class="skills" data-lang="en">Team Collaboration &amp; Communication</span>
+              <span class="skills" data-lang="uk">Командна робота та комунікація</span></li>
+          <li><span class="skills" data-lang="en">Adaptability &amp; Flexibility</span>
+              <span class="skills" data-lang="uk">Адаптивність та гнучкість</span></li>
+          <li><span class="skills" data-lang="en">Proactivity &amp; Initiative</span>
+              <span class="skills" data-lang="uk">Проактивність та ініціативність</span></li>
+          <li><span class="skills" data-lang="en">Continuous Learning</span>
+              <span class="skills" data-lang="uk">Безперервне навчання</span></li>
         </ul>
       </div>
 
       <!-- Language Skills -->
       <div class="language">
-        <h3>Languages</h3>
-        <span>Deutsch A1 Elementary</span>
+        <h3 data-lang="en">Languages</h3>
+        <h3 data-lang="uk">Мови</h3>
+        
+        <span data-lang="en">Deutsch A1 Elementary</span>
+        <span data-lang="uk">Німецька A1 Початковий</span>
         <div class="bar de"><span></span></div>
 
-        <span>Français A1 Elementary</span>
+        <span data-lang="en">Français A1 Elementary</span>
+        <span data-lang="uk">Французька A1 Початковий</span>
         <div class="bar fr"><span></span></div>
 
-        <span>English B1 Intermediate</span>
+        <span data-lang="en">English B1 Intermediate</span>
+        <span data-lang="uk">Англійська B1 Середній</span>
         <div class="bar en"><span></span></div>
 
-        <span>Ukrainian Native</span>
+        <span data-lang="en">Ukrainian Native</span>
+        <span data-lang="uk">Українська Рідна</span>
         <div class="bar uk"><span></span></div>
 
-        <span>Russian Trying to forget</span>
+        <span data-lang="en">Russian Trying to forget</span>
+        <span data-lang="uk">Російська Намагаюся забути</span>
         <div class="bar ru"><span></span></div>
       </div>
 
@@ -141,12 +173,9 @@
 
       <!-- Download CV -->
       <div class="cv">
-        <a
-          class="link_cv"
-          href="https://drive.google.com/uc?export=download&id=1Ej0NdoNREQ7hUlROfXLjyXp2QrPRNpuA"
-          download=""
-        >
-          Download PDF
+        <a class="link_cv" href="https://drive.google.com/uc?export=download&id=1Ej0NdoNREQ7hUlROfXLjyXp2QrPRNpuA" download="">
+          <span data-lang="en">Download PDF</span>
+          <span data-lang="uk">Завантажити PDF</span>
         </a>
       </div>
     </aside>
@@ -155,183 +184,329 @@
     <main class="about-me-container">
       <!-- Intro Section -->
       <section>
-        <h2 class="profession">DevOps Engineer</h2>
+        <h2 class="profession" data-lang="en">DevOps Engineer</h2>
+        <h2 class="profession" data-lang="uk">DevOps Інженер</h2>
         <h1 class="name">Kyrylo Hnelenko</h1>
-        <p>
+        
+        <p data-lang="en">
           Experienced DevOps Engineer with 5+ years in automation, CI/CD, and cloud infrastructure.<br />
           Proficient in VMware vCenter, Docker, Kubernetes, GitLab CI/CD, and networking.<br />
           Strong expertise in Linux systems, database management, and security optimization.<br /><br />
           Focused on automation, scalability, security, and reliability in modern DevOps workflows.
         </p>
+        
+        <p data-lang="uk">
+          Досвідчений DevOps інженер з понад 5-річним досвідом автоматизації, CI/CD та хмарної інфраструктури.<br />
+          Володію VMware vCenter, Docker, Kubernetes, GitLab CI/CD та мережевими технологіями.<br />
+          Міцні знання Linux систем, управління базами даних та оптимізації безпеки.<br /><br />
+          Зосереджений на автоматизації, масштабованості, безпеці та надійності в сучасних DevOps процесах.
+        </p>
       </section>
 
       <!-- Work Experience -->
       <section class="work-experience">
-        <h3 class="about-me-title">Work Experience</h3>
+        <h3 class="about-me-title" data-lang="en">Work Experience</h3>
+        <h3 class="about-me-title" data-lang="uk">Досвід роботи</h3>
 
         <div class="readmore">
           <h4 class="profession-title">
-            Middle DevOps Engineer
+            <span data-lang="en">Middle DevOps Engineer</span>
+            <span data-lang="uk">Middle DevOps Інженер</span>
             <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
           </h4>
-          <span class="date">Jul 2024 – Present</span>
-          <p>
-            • Managing and optimizing infrastructure on VMware vCenter<br>
-            • Ensuring CI/CD automation and efficient deployment processes<br>
-            • Configuring and maintaining DNS, network security, and load balancing<br>
-            • Administering databases and financial services<br>
-            • Monitoring and troubleshooting systems with Grafana, Prometheus<br>
-            • Securing infrastructure
-          </p>
+          <span class="date" data-lang="en">Jul 2024 – Present</span>
+          <span class="date" data-lang="uk">Лип 2024 – Донині</span>
+          
+          <div data-lang="en">
+            <p>
+              • Managing and optimizing infrastructure on VMware vCenter<br>
+              • Ensuring CI/CD automation and efficient deployment processes<br>
+              • Configuring and maintaining DNS, network security, and load balancing<br>
+              • Administering databases and financial services<br>
+              • Monitoring and troubleshooting systems with Grafana, Prometheus<br>
+              • Securing infrastructure
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Керування та оптимізація інфраструктури на VMware vCenter<br>
+              • Забезпечення автоматизації CI/CD та ефективних процесів розгортання<br>
+              • Конфігурація та підтримка DNS, мережевої безпеки та балансування навантаження<br>
+              • Адміністрування баз даних та фінансових сервісів<br>
+              • Моніторинг та усунення неполадок систем за допомогою Grafana, Prometheus<br>
+              • Забезпечення безпеки інфраструктури
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="readmore">
           <h4 class="profession-title">
-            Middle DevOps Engineer
+            <span data-lang="en">Middle DevOps Engineer</span>
+            <span data-lang="uk">Middle DevOps Інженер</span>
             <a class="company" href="http://customsolutions.info/">Custom Solutions</a>
           </h4>
-          <span class="date">Sep 2023 – Jul 2024</span>
-          <p>
-            • Choosing and configuring AWS cloud services<br>
-            • Designing and implementing a microservices architecture<br>
-            • Setting up CI/CD pipelines<br>
-            • Maintaining and optimizing the infrastructure<br>
-            • Training and consulting
-          </p>
+          <span class="date" data-lang="en">Sep 2023 – Jul 2024</span>
+          <span class="date" data-lang="uk">Вер 2023 – Лип 2024</span>
+          
+          <div data-lang="en">
+            <p>
+              • Choosing and configuring AWS cloud services<br>
+              • Designing and implementing a microservices architecture<br>
+              • Setting up CI/CD pipelines<br>
+              • Maintaining and optimizing the infrastructure<br>
+              • Training and consulting
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Вибір та конфігурація хмарних сервісів AWS<br>
+              • Проектування та впровадження мікросервісної архітектури<br>
+              • Налаштування CI/CD пайплайнів<br>
+              • Підтримка та оптимізація інфраструктури<br>
+              • Навчання та консультування
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="readmore">
           <h4 class="profession-title">
-            Middle DevOps Engineer
+            <span data-lang="en">Middle DevOps Engineer</span>
+            <span data-lang="uk">Middle DevOps Інженер</span>
             <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
           </h4>
-          <span class="date">Mar 2022 – Mar 2023</span>
-          <p>
-            • DevOps solutions development and implementation<br>
-            • Technical support to other engineers<br>
-            • Troubleshooting technical issues<br>
-            • Participation in software development<br>
-            • Cloud resource optimization<br>
-            • Documentation
-          </p>
+          <span class="date" data-lang="en">Mar 2022 – Mar 2023</span>
+          <span class="date" data-lang="uk">Бер 2022 – Бер 2023</span>
+          
+          <div data-lang="en">
+            <p>
+              • DevOps solutions development and implementation<br>
+              • Technical support to other engineers<br>
+              • Troubleshooting technical issues<br>
+              • Participation in software development<br>
+              • Cloud resource optimization<br>
+              • Documentation
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Розробка та впровадження DevOps рішень<br>
+              • Технічна підтримка інших інженерів<br>
+              • Усунення технічних проблем<br>
+              • Участь в розробці програмного забезпечення<br>
+              • Оптимізація хмарних ресурсів<br>
+              • Документування
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <!-- Hidden Cards -->
         <div class="card card--hidden readmore">
           <h4 class="profession-title">
-            Junior DevOps Engineer
+            <span data-lang="en">Junior DevOps Engineer</span>
+            <span data-lang="uk">Junior DevOps Інженер</span>
             <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
           </h4>
-          <span class="date">Jun 2021 – Mar 2022</span>
-          <p>
-            • Participating in basic infrastructure tasks and configurations.<br>
-            • Assisting in monitoring system performance and taking basic actions based on alerts.<br>
-            • Contributing to the documentation of processes and procedures.<br>
-            • Participating in the maintenance of software and systems.
-          </p>
+          <span class="date" data-lang="en">Jun 2021 – Mar 2022</span>
+          <span class="date" data-lang="uk">Чер 2021 – Бер 2022</span>
+          
+          <div data-lang="en">
+            <p>
+              • Participating in basic infrastructure tasks and configurations.<br>
+              • Assisting in monitoring system performance and taking basic actions based on alerts.<br>
+              • Contributing to the documentation of processes and procedures.<br>
+              • Participating in the maintenance of software and systems.
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Участь в базових завданнях інфраструктури та конфігурацій.<br>
+              • Допомога в моніторингу продуктивності системи та прийняття базових дій на основі сповіщень.<br>
+              • Внесок в документацію процесів та процедур.<br>
+              • Участь в обслуговуванні програмного забезпечення та систем.
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="card card--hidden readmore">
           <h4 class="profession-title">
-            System Administrator
+            <span data-lang="en">System Administrator</span>
+            <span data-lang="uk">Системний адміністратор</span>
             <a class="company" href="https://online-apteka.com.ua">Med-Service Group</a>
           </h4>
-          <span class="date">Feb 2021 – Jun 2021</span>
-          <p>
-            • Remote administration of office equipment, telephony<br>
-            • Error-free operation of Windows OS, Windows Server, 1C<br>
-            • Data backup &amp; recovery<br>
-            • Technical support &amp; assistance<br>
-            • Working with Active Directory
-          </p>
+          <span class="date" data-lang="en">Feb 2021 – Jun 2021</span>
+          <span class="date" data-lang="uk">Лют 2021 – Чер 2021</span>
+          
+          <div data-lang="en">
+            <p>
+              • Remote administration of office equipment, telephony<br>
+              • Error-free operation of Windows OS, Windows Server, 1C<br>
+              • Data backup &amp; recovery<br>
+              • Technical support &amp; assistance<br>
+              • Working with Active Directory
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Віддалене адміністрування офісного обладнання, телефонії<br>
+              • Безперебійна робота Windows OS, Windows Server, 1C<br>
+              • Резервне копіювання та відновлення даних<br>
+              • Технічна підтримка та допомога<br>
+              • Робота з Active Directory
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="card card--hidden readmore">
           <h4 class="profession-title">
-            Tier 2-3 Technical Support
+            <span data-lang="en">Tier 2-3 Technical Support</span>
+            <span data-lang="uk">Технічна підтримка 2-3 рівня</span>
             <a class="company" href="http://www.eds-group.dp.ua">EDS Group</a>
           </h4>
-          <span class="date">Aug 2020 – Oct 2020</span>
-          <p>
-            • Service Desk, user accounts, customer support<br>
-            • Cooperation with 1C programmers, telecom providers<br>
-            • LAN troubleshooting<br>
-            • Working with ARP, TCP/IP, DHCP, DNS
-          </p>
+          <span class="date" data-lang="en">Aug 2020 – Oct 2020</span>
+          <span class="date" data-lang="uk">Сер 2020 – Жов 2020</span>
+          
+          <div data-lang="en">
+            <p>
+              • Service Desk, user accounts, customer support<br>
+              • Cooperation with 1C programmers, telecom providers<br>
+              • LAN troubleshooting<br>
+              • Working with ARP, TCP/IP, DHCP, DNS
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Service Desk, облікові записи користувачів, підтримка клієнтів<br>
+              • Співпраця з програмістами 1C, провайдерами телекомунікацій<br>
+              • Усунення неполадок в локальній мережі<br>
+              • Робота з ARP, TCP/IP, DHCP, DNS
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="card card--hidden readmore">
           <h4 class="profession-title">
-            System Administrator
+            <span data-lang="en">System Administrator</span>
+            <span data-lang="uk">Системний адміністратор</span>
             <span class="company">Vest-Dnepr</span>
           </h4>
-          <span class="date">Mar 2019 – Aug 2020</span>
-          <p>
-            • Implementation and support of IT infrastructures<br>
-            • Administration of Windows Servers (AD, DHCP, Backup)<br>
-            • VMware ESXi (basic config, maintenance)<br>
-            • Managing LAN, portable devices
-          </p>
+          <span class="date" data-lang="en">Mar 2019 – Aug 2020</span>
+          <span class="date" data-lang="uk">Бер 2019 – Сер 2020</span>
+          
+          <div data-lang="en">
+            <p>
+              • Implementation and support of IT infrastructures<br>
+              • Administration of Windows Servers (AD, DHCP, Backup)<br>
+              • VMware ESXi (basic config, maintenance)<br>
+              • Managing LAN, portable devices
+            </p>
+          </div>
+          
+          <div data-lang="uk">
+            <p>
+              • Впровадження та підтримка IT інфраструктур<br>
+              • Адміністрування Windows Servers (AD, DHCP, Backup)<br>
+              • VMware ESXi (базова конфігурація, обслуговування)<br>
+              • Управління локальною мережею, портативними пристроями
+            </p>
+          </div>
+          
           <p class="readmore-link">
-            <a href="#">...see more</a>
+            <a href="#" data-lang="en">...see more</a>
+            <a href="#" data-lang="uk">...детальніше</a>
           </p>
         </div>
 
         <div class="card card--hidden">
           <h4 class="profession-title">
-            Chief Telecommunications Department
-            <a class="company" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
+            <span data-lang="en">Chief Telecommunications Department</span>
+            <span data-lang="uk">Начальник відділу телекомунікацій</span>
+            <a class="company" href="https://www.mil.gov.ua">
+              <span data-lang="en">Armed Forces of Ukraine</span>
+              <span data-lang="uk">Збройні Сили України</span>
+            </a>
           </h4>
-          <span class="date">Mar 2016 – Mar 2019</span>
+          <span class="date" data-lang="en">Mar 2016 – Mar 2019</span>
+          <span class="date" data-lang="uk">Бер 2016 – Бер 2019</span>
         </div>
 
         <div class="card card--hidden">
           <h4 class="profession-title">
-            Senior Engineer
-            <a class="company" href="https://www.yuzhnoye.com/en/home/">Yuzhnoye Design Office SDO</a>
+            <span data-lang="en">Senior Engineer</span>
+            <span data-lang="uk">Провідний інженер</span>
+            <a class="company" href="https://www.yuzhnoye.com/en/home/">
+              <span data-lang="en">Yuzhnoye Design Office SDO</span>
+              <span data-lang="uk">КБ Південне ім. М.К. Янгеля</span>
+            </a>
           </h4>
-          <span class="date">Oct 2015 – Mar 2016</span>
+          <span class="date" data-lang="en">Oct 2015 – Mar 2016</span>
+          <span class="date" data-lang="uk">Жов 2015 – Бер 2016</span>
         </div>
 
         <button class="btm-more">
           <i id="chevron-icon" class="fas fa-chevron-down"></i>
-          <span>More</span>
+          <span data-lang="en">More</span>
+          <span data-lang="uk">Більше</span>
         </button>
       </section>
 
       <!-- Education -->
       <section>
-        <h3 class="about-me-title">Education</h3>
+        <h3 class="about-me-title" data-lang="en">Education</h3>
+        <h3 class="about-me-title" data-lang="uk">Освіта</h3>
         <div class="education">
           <div>
-            <a class="university" href="https://www.kre.dp.ua">Koledzh Radioelektroniky Dnipro Ukraine</a>
-            <h4>Faculty of Radio Engineering</h4>
-            <span class="date">Sep 2010 – Jun 2014</span>
+            <a class="university" href="https://www.kre.dp.ua">
+              <span data-lang="en">Koledzh Radioelektroniky Dnipro Ukraine</span>
+              <span data-lang="uk">Коледж радіоелектроніки Дніпро Україна</span>
+            </a>
+            <h4 data-lang="en">Faculty of Radio Engineering</h4>
+            <h4 data-lang="uk">Факультет радіотехніки</h4>
+            <span class="date" data-lang="en">Sep 2010 – Jun 2014</span>
+            <span class="date" data-lang="uk">Вер 2010 – Чер 2014</span>
           </div>
         </div>
       </section>
 
       <!-- Licenses and Certificates -->
       <section>
-        <h3 class="about-me-title">Licenses and Certificates</h3>
+        <h3 class="about-me-title" data-lang="en">Licenses and Certificates</h3>
+        <h3 class="about-me-title" data-lang="uk">Ліцензії та сертифікати</h3>
         <div class="education licenses-container">
           <div>
             <a class="university" href="https://www.linkedin.com/learning/certificates/4ec4a14f1cbea87435aedce0cde0f46153ba162bebdf4a29659fca20ba8427a0">
@@ -359,52 +534,71 @@
           </div>
           <button class="btm-more-licenses">
             <i id="chevron-icon-licenses" class="fas fa-chevron-down"></i>
-            <span>More</span>
+            <span data-lang="en">More</span>
+            <span data-lang="uk">Більше</span>
           </button>
         </div>
       </section>
 
       <!-- Courses -->
       <section>
-        <h3 class="about-me-title">Courses</h3>
+        <h3 class="about-me-title" data-lang="en">Courses</h3>
+        <h3 class="about-me-title" data-lang="uk">Курси</h3>
         <div class="education courses-container">
           <div>
             <a class="university" href="https://projector.institute">Projector Institute</a>
-            <h4>Highload Software Architecture</h4>
-            <span class="date">Issued Jun 2024 · Expired Oct 2024</span><br><br>
+            <h4 data-lang="en">Highload Software Architecture</h4>
+            <h4 data-lang="uk">Високонавантажена архітектура програмного забезпечення</h4>
+            <span class="date" data-lang="en">Issued Jun 2024 · Expired Oct 2024</span>
+            <span class="date" data-lang="uk">Видано Чер 2024 · Закінчився Жов 2024</span><br><br>
 
             <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
             <h4>AWS Cloud Practitioner Essentials</h4>
-            <span class="date">Jan 2023</span><br><br>
+            <span class="date" data-lang="en">Jan 2023</span>
+            <span class="date" data-lang="uk">Січ 2023</span><br><br>
 
             <a class="university" href="https://www.udemy.com/">Udemy</a>
             <h4>Learn to Code in Python 3: Beginner to Advanced</h4>
-            <span class="date">Jan 2023</span><br><br>
+            <span class="date" data-lang="en">Jan 2023</span>
+            <span class="date" data-lang="uk">Січ 2023</span><br><br>
 
             <a class="university" href="https://www.udemy.com/">Udemy</a>
-            <h4>Prometheus | The Complete Hands-On for Monitoring &amp; Alerting</h4>
-            <span class="date">Jan 2023</span><br><br>
+            <h4 data-lang="en">Prometheus | The Complete Hands-On for Monitoring &amp; Alerting</h4>
+            <h4 data-lang="uk">Prometheus | Повний практичний курс з моніторингу та сповіщень</h4>
+            <span class="date" data-lang="en">Jan 2023</span>
+            <span class="date" data-lang="uk">Січ 2023</span><br><br>
           </div>
           <div class="card--hidden-courses">
             <a class="university" href="https://www.udemy.com/">Ubuntu Linux Fundamentals: Linux Server Administration Basics</a>
             <h4></h4>
-            <span class="date">Jan 2023</span><br><br>
+            <span class="date" data-lang="en">Jan 2023</span>
+            <span class="date" data-lang="uk">Січ 2023</span><br><br>
 
             <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
-            <h4>DevOps Winter Program</h4>
-            <span class="date">Dec 2020</span><br><br>
+            <h4 data-lang="en">DevOps Winter Program</h4>
+            <h4 data-lang="uk">Зимова програма DevOps</h4>
+            <span class="date" data-lang="en">Dec 2020</span>
+            <span class="date" data-lang="uk">Гру 2020</span><br><br>
 
             <a class="university" href="https://goit.ua">GoIT</a>
-            <h4>FULLSTACK ONLINE UKRAINE</h4>
-            <span class="date">Aug 2020</span><br><br>
+            <h4 data-lang="en">FULLSTACK ONLINE UKRAINE</h4>
+            <h4 data-lang="uk">FULLSTACK ОНЛАЙН УКРАЇНА</h4>
+            <span class="date" data-lang="en">Aug 2020</span>
+            <span class="date" data-lang="uk">Сер 2020</span><br><br>
 
-            <a class="university" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
-            <h4>Human Resource</h4>
-            <span class="date">Sep 2018 – May 2018</span><br><br>
+            <a class="university" href="https://www.mil.gov.ua">
+              <span data-lang="en">Armed Forces of Ukraine</span>
+              <span data-lang="uk">Збройні Сили України</span>
+            </a>
+            <h4 data-lang="en">Human Resource</h4>
+            <h4 data-lang="uk">Управління персоналом</h4>
+            <span class="date" data-lang="en">Sep 2018 – May 2018</span>
+            <span class="date" data-lang="uk">Вер 2018 – Тра 2018</span><br><br>
           </div>
           <button class="btm-more-courses">
             <i id="chevron-icon-courses" class="fas fa-chevron-down"></i>
-            <span>More</span>
+            <span data-lang="en">More</span>
+            <span data-lang="uk">Більше</span>
           </button>
         </div>
       </section>

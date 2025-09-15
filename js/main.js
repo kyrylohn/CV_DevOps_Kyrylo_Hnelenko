@@ -57,6 +57,9 @@ async function setLanguage(lang) {
     // Update dynamic button texts
     updateButtonTexts();
 
+    // Update 'Read more' link texts
+    updateReadMoreLinks();
+
     // Save selected language to localStorage
     localStorage.setItem('lang', lang);
 
@@ -86,6 +89,17 @@ function updateButtonTexts() {
 }
 
 /**
+ * Updates the text for "Read more/less" links based on the current language and state.
+ */
+function updateReadMoreLinks() {
+  readmoreLinks.forEach(link => {
+    const readmoreContainer = link.closest('.readmore');
+    const isExpanded = readmoreContainer.classList.contains('open');
+    link.textContent = isExpanded ? translations.less : translations.see_more;
+  });
+}
+
+/**
  * 1. "Read more" functionality for Work Experience blocks
  */
 const readmoreLinks = document.querySelectorAll('.readmore-link a');
@@ -99,7 +113,7 @@ readmoreLinks.forEach(link => {
 
     readmoreContainer.classList.toggle('open');
 
-    // Update text based on the translation keys
+    // Now, update text based on the container's class, not the text content
     const isExpanded = readmoreContainer.classList.contains('open');
     link.textContent = isExpanded ? translations.less : translations.see_more;
   });
@@ -124,8 +138,8 @@ if (btnShowMoreCards) {
 
     const buttonText = btnShowMoreCards.querySelector('span');
     if (!buttonText) return;
-    const isExpanded = hiddenCards[0].classList.contains('card--hidden');
-    buttonText.textContent = isExpanded ? translations.more_work : translations.less_work;
+    const isExpanded = !hiddenCards[0].classList.contains('card--hidden');
+    buttonText.textContent = isExpanded ? translations.less_work : translations.more_work;
   });
 }
 
@@ -146,8 +160,8 @@ if (btnShowMoreLicenses && hiddenLicenses) {
 
     const buttonText = btnShowMoreLicenses.querySelector('span');
     if (!buttonText) return;
-    const isExpanded = hiddenLicenses.classList.contains('card--hidden-licenses');
-    buttonText.textContent = isExpanded ? translations.more_licenses : translations.less_licenses;
+    const isExpanded = !hiddenLicenses.classList.contains('card--hidden-licenses');
+    buttonText.textContent = isExpanded ? translations.less_licenses : translations.more_licenses;
   });
 }
 
@@ -168,8 +182,8 @@ if (btnShowMoreCourses && hiddenCourses) {
 
     const buttonText = btnShowMoreCourses.querySelector('span');
     if (!buttonText) return;
-    const isExpanded = hiddenCourses.classList.contains('card--hidden-courses');
-    buttonText.textContent = isExpanded ? translations.more_courses : translations.less_courses;
+    const isExpanded = !hiddenCourses.classList.contains('card--hidden-courses');
+    buttonText.textContent = isExpanded ? translations.less_courses : translations.more_courses;
   });
 }
 

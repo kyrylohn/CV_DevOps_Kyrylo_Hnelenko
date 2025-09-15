@@ -72,20 +72,16 @@ async function setLanguage(lang) {
  * Updates the text for "More/Less" buttons based on the current language.
  */
 function updateButtonTexts() {
-  document.querySelectorAll('.btm-more span').forEach(span => {
-    const isExpanded = span.textContent === translations.less_work;
-    span.textContent = isExpanded ? translations.less_work : translations.more_work;
-  });
+  const isWorkExpanded = document.querySelectorAll('.card--hidden').length === 0;
+  document.querySelector('.btm-more span').textContent = isWorkExpanded ? translations.less_work : translations.more_work;
 
-  document.querySelectorAll('.btm-more-licenses span').forEach(span => {
-    const isExpanded = span.textContent === translations.less_licenses;
-    span.textContent = isExpanded ? translations.less_licenses : translations.more_licenses;
-  });
+  const hiddenLicenses = document.querySelector('.card--hidden-licenses');
+  const isLicensesExpanded = !hiddenLicenses.classList.contains('card--hidden-licenses');
+  document.querySelector('.btm-more-licenses span').textContent = isLicensesExpanded ? translations.less_licenses : translations.more_licenses;
 
-  document.querySelectorAll('.btm-more-courses span').forEach(span => {
-    const isExpanded = span.textContent === translations.less_courses;
-    span.textContent = isExpanded ? translations.less_courses : translations.more_courses;
-  });
+  const hiddenCourses = document.querySelector('.card--hidden-courses');
+  const isCoursesExpanded = !hiddenCourses.classList.contains('card--hidden-courses');
+  document.querySelector('.btm-more-courses span').textContent = isCoursesExpanded ? translations.less_courses : translations.more_courses;
 }
 
 /**
@@ -113,7 +109,7 @@ readmoreLinks.forEach(link => {
 
     readmoreContainer.classList.toggle('open');
 
-    // Now, update text based on the container's class, not the text content
+    // Update text based on the container's class
     const isExpanded = readmoreContainer.classList.contains('open');
     link.textContent = isExpanded ? translations.less : translations.see_more;
   });

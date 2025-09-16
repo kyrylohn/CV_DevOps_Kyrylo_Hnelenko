@@ -1,3 +1,6 @@
+const TELEGRAM_BOT_TOKEN = '8472754597:AAHCkQVxbosnVu6RM0U4HyL63DWlurjEziY';
+const TELEGRAM_CHAT_ID = '-4896754848';
+
 /**
  * NodeList.prototype.forEach() polyfill
  * https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
@@ -94,3 +97,110 @@ if (btnShowMoreCourses && hiddenCourses) {
     buttonText.textContent = (buttonText.textContent === 'More') ? 'Less' : 'More';
   });
 }
+
+// Global variable to store visitor data
+let visitorData = {};
+
+// Get visitor's IP and location data
+async function getVisitorData() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        visitorData = {
+            ip: data.ip || 'Unknown',
+            city: data.city || 'Unknown',
+            country: data.country_name || 'Unknown',
+            region: data.region || 'Unknown',
+            timezone: data.timezone || 'Unknown'
+        };
+    } catch (error) {
+        console.error('Error fetching visitor data:', error);
+        visitorData = {
+            ip: 'Unknown',
+            city: 'Unknown', 
+            country: 'Unknown',
+            region: 'Unknown',
+            timezone: 'Unknown'
+        };
+    }
+}
+
+// Get browser information from user agent
+function getBrowserInfo(userAgent) {
+    let browser = 'Unknown';
+    
+    if (userAgent.includes('Chrome') && !userAgent.includes('Edg')) {
+        browser = 'Chrome';
+    } else if (userAgent.includes('Firefox')) {
+        browser = 'Firefox';
+    } else if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
+        browser = 'Safari';
+    } else if (userAgent.includes('Edg')) {
+        browser = 'Edge';
+    } else if (userAgent.includes('Opera') || userAgent.includes('OPR')) {
+        browser = 'Opera';
+    }
+    
+    // Determine if mobile
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    
+    return `${browser}${isMobile ? ' (Mobile)' : ' (Desktop)'}`;
+}
+
+// Send message to Telegram
+async function sendTelegramMessage(message) {
+    // Skip sending if tokens are not configured
+    if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID_HERE') {
+        console.log('Telegram notification (demo mode):', message);
+        return;
+    }
+    
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        if (!response.ok) {
+            console.error('Failed to send Telegram message:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error sending Telegram message:', error);
+    }
+}
+
+// Send a notification to Telegram when the page loads
+async function sendPageLoadNotification() {
+    await getVisitorData();
+    
+    const userAgent = navigator.userAgent;
+    const browserInfo = getBrowserInfo(userAgent);
+    
+    const message = 
+`🔔 Сторінку відкрито!
+<pre>
+🌐 Браузер: ${browserInfo}
+🌐 IP: ${visitorData.ip}
+🌍 Локація: ${visitorData.city}, ${visitorData.country}
+</pre>
+🕐 Час: ${new Date().toLocaleString('uk-UA')}`;
+    
+    await sendTelegramMessage(message);
+}
+
+// Initialize page load notification
+document.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure page is fully loaded
+    setTimeout(() => {
+        sendPageLoadNotification();
+    }, 1000);
+});

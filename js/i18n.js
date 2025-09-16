@@ -443,12 +443,11 @@ class I18n {
       this.switchLanguage(newLanguage);
     });
 
-    // Insert into sidebar
-    const sidebar = document.querySelector('.sidebar');
-    const socialContainer = document.querySelector('.social-container');
-    
-    if (sidebar && socialContainer) {
-      sidebar.insertBefore(languageSwitch, socialContainer);
+    // Insert before the CV download section
+    const cvSection = document.querySelector('.cv');
+  
+    if (cvSection) {
+      cvSection.parentNode.insertBefore(languageSwitch, cvSection);
     }
 
     this.updateLanguageSwitch();

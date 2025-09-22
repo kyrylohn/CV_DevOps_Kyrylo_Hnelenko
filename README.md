@@ -13,7 +13,7 @@ A modern, responsive CV website for a DevOps Engineer with bilingual support (En
 
 ## 🚀 Live Demo
 
-[View Live CV](https://github.com/kyrylohn/CV_DevOps_Kyrylo_Hnelenko.git)
+[View Live CV](https://kyrylohn.github.io/CV_DevOps_Kyrylo_Hnelenko/)
 
 ## 📋 Sections
 

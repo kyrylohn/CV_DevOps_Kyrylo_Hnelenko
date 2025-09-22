@@ -34,47 +34,47 @@ class I18n {
           positions: [
             {
               title: "Middle DevOps Engineer",
-              date: "Jul 2024 – Present",
+              date: "Jul 2024 — Present",
               description: "• Managing and optimizing infrastructure on VMware vCenter<br>• Ensuring CI/CD automation and efficient deployment processes<br>• Configuring and maintaining DNS, network security, and load balancing<br>• Administering databases and financial services<br>• Monitoring and troubleshooting systems with Grafana, Prometheus<br>• Securing infrastructure"
             },
             {
               title: "Middle DevOps Engineer",
-              date: "Sep 2023 – Jul 2024",
+              date: "Sep 2023 — Jul 2024",
               description: "• Choosing and configuring AWS cloud services<br>• Designing and implementing a microservices architecture<br>• Setting up CI/CD pipelines<br>• Maintaining and optimizing the infrastructure<br>• Training and consulting"
             },
             {
               title: "Middle DevOps Engineer",
-              date: "Mar 2022 – Mar 2023",
+              date: "Mar 2022 — Mar 2023",
               description: "• DevOps solutions development and implementation<br>• Technical support to other engineers<br>• Troubleshooting technical issues<br>• Participation in software development<br>• Cloud resource optimization<br>• Documentation"
             },
             {
               title: "Junior DevOps Engineer",
-              date: "Jun 2021 – Mar 2022",
+              date: "Jun 2021 — Mar 2022",
               description: "• Participating in basic infrastructure tasks and configurations.<br>• Assisting in monitoring system performance and taking basic actions based on alerts.<br>• Contributing to the documentation of processes and procedures.<br>• Participating in the maintenance of software and systems."
             },
             {
               title: "System Administrator",
-              date: "Feb 2021 – Jun 2021",
+              date: "Feb 2021 — Jun 2021",
               description: "• Remote administration of office equipment, telephony<br>• Error-free operation of Windows OS, Windows Server, 1C<br>• Data backup & recovery<br>• Technical support & assistance<br>• Working with Active Directory"
             },
             {
               title: "Tier 2-3 Technical Support",
-              date: "Aug 2020 – Oct 2020",
+              date: "Aug 2020 — Oct 2020",
               description: "• Service Desk, user accounts, customer support<br>• Cooperation with 1C programmers, telecom providers<br>• LAN troubleshooting<br>• Working with ARP, TCP/IP, DHCP, DNS"
             },
             {
               title: "System Administrator",
-              date: "Mar 2019 – Aug 2020",
+              date: "Mar 2019 — Aug 2020",
               description: "• Implementation and support of IT infrastructures<br>• Administration of Windows Servers (AD, DHCP, Backup)<br>• VMware ESXi (basic config, maintenance)<br>• Managing LAN, portable devices"
             },
             {
               title: "Chief Telecommunications Department",
-              date: "Mar 2016 – Mar 2019",
+              date: "Mar 2016 — Mar 2019",
               description: ""
             },
             {
               title: "Senior Engineer",
-              date: "Oct 2015 – Mar 2016",
+              date: "Oct 2015 — Mar 2016",
               description: ""
             }
           ]
@@ -82,13 +82,28 @@ class I18n {
         education: {
           university: "Koledzh Radioelektroniky Dnipro Ukraine",
           faculty: "Faculty of Radio Engineering",
-          date: "Sep 2010 – Jun 2014"
+          date: "Sep 2010 — Jun 2014"
         },
         ui: {
           seeMore: "...see more",
           less: "less",
           more: "More",
           languageSwitch: "Switch to Ukrainian"
+        },
+        menu: {
+          language: "Language",
+          theme: "Theme",
+          light: "Light",
+          dark: "Dark",
+          contact: "Send Message",
+          downloadPdf: "Download PDF"
+        },
+        contact: {
+          title: "Send me a message",
+          name: "Name",
+          email: "Email",
+          message: "Message",
+          send: "Send Message"
         },
         languageSkills: {
           german: "Deutsch A1 Elementary",
@@ -122,47 +137,47 @@ class I18n {
           positions: [
             {
               title: "Middle DevOps Інженер",
-              date: "Лип 2024 – Дотепер",
+              date: "Лип 2024 — Дотепер",
               description: "• Управління та оптимізація інфраструктури на VMware vCenter<br>• Забезпечення автоматизації CI/CD та ефективних процесів розгортання<br>• Налаштування та підтримка DNS, мережевої безпеки та балансування навантаження<br>• Адміністрування баз даних та фінансових сервісів<br>• Моніторинг та усунення неполадок систем за допомогою Grafana, Prometheus<br>• Забезпечення безпеки інфраструктури"
             },
             {
               title: "Middle DevOps Інженер",
-              date: "Вер 2023 – Лип 2024",
+              date: "Вер 2023 — Лип 2024",
               description: "• Вибір та налаштування хмарних сервісів AWS<br>• Проектування та впровадження мікросервісної архітектури<br>• Налаштування CI/CD пайплайнів<br>• Підтримка та оптимізація інфраструктури<br>• Навчання та консультування"
             },
             {
               title: "Middle DevOps Інженер",
-              date: "Бер 2022 – Бер 2023",
+              date: "Бер 2022 — Бер 2023",
               description: "• Розробка та впровадження DevOps рішень<br>• Технічна підтримка інших інженерів<br>• Усунення технічних проблем<br>• Участь у розробці програмного забезпечення<br>• Оптимізація хмарних ресурсів<br>• Документування"
             },
             {
               title: "Junior DevOps Інженер",
-              date: "Чер 2021 – Бер 2022",
+              date: "Чер 2021 — Бер 2022",
               description: "• Участь у базових завданнях інфраструктури та конфігураціях<br>• Допомога в моніторингу продуктивності системи та виконанні базових дій на основі сповіщень<br>• Внесок у документування процесів та процедур<br>• Участь у підтримці програмного забезпечення та систем"
             },
             {
               title: "Системний адміністратор",
-              date: "Лют 2021 – Чер 2021",
+              date: "Лют 2021 — Чер 2021",
               description: "• Віддалене адміністрування офісного обладнання, телефонії<br>• Безперебійна робота Windows OS, Windows Server, 1C<br>• Резервне копіювання та відновлення даних<br>• Технічна підтримка та допомога<br>• Робота з Active Directory"
             },
             {
               title: "Технічна підтримка Tier 2-3",
-              date: "Сер 2020 – Жов 2020",
+              date: "Сер 2020 — Жов 2020",
               description: "• Service Desk, облікові записи користувачів, підтримка клієнтів<br>• Співпраця з програмістами 1C, телекомунікаційними провайдерами<br>• Усунення неполадок LAN<br>• Робота з ARP, TCP/IP, DHCP, DNS"
             },
             {
               title: "Системний адміністратор",
-              date: "Бер 2019 – Сер 2020",
+              date: "Бер 2019 — Сер 2020",
               description: "• Впровадження та підтримка IT інфраструктур<br>• Адміністрування Windows Servers (AD, DHCP, Backup)<br>• VMware ESXi (базова конфігурація, обслуговування)<br>• Управління LAN, портативними пристроями"
             },
             {
               title: "Начальник відділу телекомунікацій",
-              date: "Бер 2016 – Бер 2019",
+              date: "Бер 2016 — Бер 2019",
               description: ""
             },
             {
               title: "Провідний інженер",
-              date: "Жов 2015 – Бер 2016",
+              date: "Жов 2015 — Бер 2016",
               description: ""
             }
           ]
@@ -170,13 +185,21 @@ class I18n {
         education: {
           university: "Коледж радіоелектроніки Дніпро Україна",
           faculty: "Факультет радіотехніки",
-          date: "Вер 2010 – Чер 2014"
+          date: "Вер 2010 — Чер 2014"
         },
         ui: {
           seeMore: "...детальніше",
           less: "менше",
           more: "Більше",
           languageSwitch: "Перемкнути на англійську"
+        },
+        menu: {
+          language: "Мова",
+          theme: "Тема",
+          light: "Світла",
+          dark: "Темна",
+          telegram: "Написати в Telegram",
+          downloadPdf: "Завантажити PDF"
         },
         languageSkills: {
           german: "Німецька A1 Початковий",
@@ -257,7 +280,6 @@ class I18n {
     this.currentLanguage = language;
     localStorage.setItem('cv-language', language);
     this.updateContent();
-    this.updateLanguageSwitch();
   }
 
   /**
@@ -306,6 +328,43 @@ class I18n {
 
     // Update UI elements
     this.updateUIElements();
+
+    // Update hamburger menu
+    this.updateHamburgerMenu();
+  }
+
+  /**
+   * Update hamburger menu translations
+   */
+  updateHamburgerMenu() {
+    // Update menu item labels
+    const languageLabel = document.querySelector('[data-translate="menu.language"]');
+    if (languageLabel) languageLabel.textContent = this.t('menu.language');
+
+    const themeLabel = document.querySelector('[data-translate="menu.theme"]');
+    if (themeLabel) themeLabel.textContent = this.t('menu.theme');
+
+    const telegramLink = document.querySelector('[data-translate="menu.telegram"]');
+    if (telegramLink) telegramLink.textContent = this.t('menu.telegram');
+
+    const downloadLink = document.querySelector('[data-translate="menu.downloadPdf"]');
+    if (downloadLink) downloadLink.textContent = this.t('menu.downloadPdf');
+
+    // Update theme option labels
+    const lightThemeLabel = document.querySelector('[data-theme="light"] span');
+    if (lightThemeLabel) lightThemeLabel.textContent = this.t('menu.light');
+
+    const darkThemeLabel = document.querySelector('[data-theme="dark"] span');
+    if (darkThemeLabel) darkThemeLabel.textContent = this.t('menu.dark');
+
+    // Update active language option
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach(option => {
+      option.classList.remove('active');
+      if (option.getAttribute('data-lang') === this.currentLanguage) {
+        option.classList.add('active');
+      }
+    });
   }
 
   /**
@@ -429,39 +488,11 @@ class I18n {
    * Initialize language switch button
    */
   initializeLanguageSwitch() {
-    // Create language switch button with modern toggle design
-    const languageSwitch = document.createElement('button');
-    languageSwitch.className = `language-switch ${this.currentLanguage}`;
-    languageSwitch.innerHTML = `
-      <span class="lang-label en">EN</span>
-      <span class="lang-label uk">UA</span>
-    `;
-    
-    // Add click event
-    languageSwitch.addEventListener('click', () => {
-      const newLanguage = this.currentLanguage === 'en' ? 'uk' : 'en';
-      this.switchLanguage(newLanguage);
-    });
-
-    // Insert before the CV download section
-    const cvSection = document.querySelector('.cv');
-  
-    if (cvSection) {
-      cvSection.parentNode.insertBefore(languageSwitch, cvSection);
-    }
-
-    this.updateLanguageSwitch();
-  }
-
-  /**
-   * Update language switch button
-   */
-  updateLanguageSwitch() {
-    const languageSwitch = document.querySelector('.language-switch');
-    if (languageSwitch) {
-      // Update toggle state
-      languageSwitch.className = `language-switch ${this.currentLanguage}`;
-      languageSwitch.title = this.t('ui.languageSwitch');
+    // Language switch is now handled by the hamburger menu
+    // Remove old language switch if it exists
+    const oldLanguageSwitch = document.querySelector('.language-switch');
+    if (oldLanguageSwitch) {
+      oldLanguageSwitch.remove();
     }
   }
 }

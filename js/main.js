@@ -98,6 +98,227 @@ if (btnShowMoreCourses && hiddenCourses) {
   });
 }
 
+/**
+ * 5. Hamburger Menu Functionality
+ */
+const hamburgerToggle = document.querySelector('.hamburger-toggle');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+if (hamburgerToggle && hamburgerMenu) {
+  // Toggle menu
+  hamburgerToggle.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    hamburgerToggle.classList.toggle('active');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!hamburgerMenu.contains(event.target)) {
+      hamburgerMenu.classList.remove('active');
+      hamburgerToggle.classList.remove('active');
+    }
+  });
+
+  // Language selection
+  const langOptions = document.querySelectorAll('.lang-option');
+  langOptions.forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.preventDefault();
+      const selectedLang = option.getAttribute('data-lang');
+      
+      // Update active state
+      langOptions.forEach(opt => opt.classList.remove('active'));
+      option.classList.add('active');
+      
+      // Switch language if i18n is available
+      if (window.i18n) {
+        window.i18n.switchLanguage(selectedLang);
+      }
+    });
+  });
+
+  // Theme toggle
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  // Apply saved theme on load
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeOptions.forEach(opt => opt.classList.remove('active'));
+    document.querySelector('[data-theme="dark"]').classList.add('active');
+  }
+
+  themeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const selectedTheme = option.getAttribute('data-theme');
+      
+      // Update active state
+      themeOptions.forEach(opt => opt.classList.remove('active'));
+      option.classList.add('active');
+      
+      // Apply theme
+      if (selectedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+}
+
+/**
+ * 6. Contact Form Functionality
+ */
+const contactFormToggle = document.querySelector('.contact-form-toggle');
+const contactFormModal = document.querySelector('.contact-form-modal');
+const contactFormClose = document.querySelector('.contact-form-close');
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactFormToggle && contactFormModal) {
+  // Open contact form
+  contactFormToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    contactFormModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close contact form
+  const closeForm = () => {
+    contactFormModal.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Clear form and status after animation completes
+    setTimeout(() => {
+      contactForm.reset();
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+    }, 300);
+  };
+
+  contactFormClose.addEventListener('click', closeForm);
+
+  // Close on backdrop click
+  contactFormModal.addEventListener('click', (e) => {
+    if (e.target === contactFormModal) {
+      closeForm();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactFormModal.classList.contains('active')) {
+      closeForm();
+    }
+  });
+
+  // Handle form submission
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const name = formData.get('name').trim();
+    const email = formData.get('email').trim();
+    const message = formData.get('message').trim();
+    
+    if (!name || !email || !message) {
+      showFormStatus('error', 'Please fill in all fields');
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showFormStatus('error', 'Please enter a valid email address');
+      return;
+    }
+
+    // Show sending status
+    showFormStatus('sending', 'Sending message...');
+    
+    // Disable submit button
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      // Send message via Telegram
+      const telegramMessage = 
+`📧 Нове повідомлення з сайту CV!
+
+👤 Ім'я: ${name}
+📧 Email: ${email}
+
+💬 Повідомлення:
+${message}
+
+🕐 Час: ${new Date().toLocaleString('uk-UA')}`;
+
+      const success = await sendTelegramMessage(telegramMessage);
+      
+      if (success !== false) {
+        showFormStatus('success', 'Message sent successfully! I\'ll get back to you soon.');
+        
+        // Close form after 2 seconds
+        setTimeout(() => {
+          closeForm();
+        }, 2000);
+      } else {
+        showFormStatus('error', 'Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      showFormStatus('error', 'Failed to send message. Please try again later.');
+    } finally {
+      // Re-enable submit button
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+
+  function showFormStatus(type, message) {
+    formStatus.className = `form-status ${type}`;
+    formStatus.textContent = message;
+  }
+}
+
+// Update the sendTelegramMessage function to return success status
+async function sendTelegramMessage(message) {
+    // Skip sending if tokens are not configured
+    if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE' || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID_HERE') {
+        console.log('Telegram notification (demo mode):', message);
+        return true; // Return success for demo mode
+    }
+    
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        if (!response.ok) {
+            console.error('Failed to send Telegram message:', response.statusText);
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error('Error sending Telegram message:', error);
+        return false;
+    }
+}
+
 // Global variable to store visitor data
 let visitorData = {};
 
@@ -186,11 +407,11 @@ async function sendPageLoadNotification() {
     const browserInfo = getBrowserInfo(userAgent);
     
     const message = 
-`🔔 Сторінку відкрито!
+`📄 Сторінку відкрито!
 <pre>
 🌐 Браузер: ${browserInfo}
 🌐 IP: ${visitorData.ip}
-🌍 Локація: ${visitorData.city}, ${visitorData.country}
+🌐 Локація: ${visitorData.city}, ${visitorData.country}
 </pre>
 🕐 Час: ${new Date().toLocaleString('uk-UA')}`;
     

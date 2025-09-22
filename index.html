@@ -22,6 +22,83 @@
   <script src="https://kit.fontawesome.com/a9e1192225.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <button class="hamburger-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="hamburger-dropdown">
+      <div class="menu-item language-selector">
+        <i class="fas fa-globe"></i>
+        <span data-translate="menu.language">Language</span>
+        <div class="language-options">
+          <button class="lang-option" data-lang="en">🇺🇸 English</button>
+          <button class="lang-option" data-lang="uk">🇺🇦 Українська</button>
+        </div>
+      </div>
+      
+      <div class="menu-item theme-selector">
+        <i class="fas fa-moon"></i>
+        <span data-translate="menu.theme">Theme</span>
+        <div class="theme-toggle">
+          <button class="theme-option active" data-theme="light">
+            <i class="fas fa-sun"></i>
+            <span data-translate="menu.light">Light</span>
+          </button>
+          <button class="theme-option" data-theme="dark">
+            <i class="fas fa-moon"></i>
+            <span data-translate="menu.dark">Dark</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="menu-item contact-form-item">
+        <i class="fab fa-telegram"></i>
+        <span data-translate="menu.contact">Send Message</span>
+        <button class="contact-form-toggle">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </div>
+      
+      <!-- Contact Form Modal -->
+      <div class="contact-form-modal">
+        <div class="contact-form-content">
+          <div class="contact-form-header">
+            <h3 data-translate="contact.title">Send me a message</h3>
+            <button class="contact-form-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName" data-translate="contact.name">Name</label>
+              <input type="text" id="contactName" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail" data-translate="contact.email">Email</label>
+              <input type="email" id="contactEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage" data-translate="contact.message">Message</label>
+              <textarea id="contactMessage" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-submit" data-translate="contact.send">Send Message</button>
+              <div class="form-status" id="formStatus"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <i class="fas fa-download"></i>
+        <a href="https://drive.google.com/uc?export=download&id=1Ej0NdoNREQ7hUlROfXLjyXp2QrPRNpuA" download data-translate="menu.downloadPdf">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
   <div class="main-container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -95,7 +172,7 @@
         <span>Deutsch A1 Elementary</span>
         <div class="bar de"><span></span></div>
 
-        <span>Français A1 Elementary</span>
+        <span>FranÃ§ais A1 Elementary</span>
         <div class="bar fr"><span></span></div>
 
         <span>English B1 Intermediate</span>
@@ -139,16 +216,7 @@
         </ul>
       </div>
 
-      <!-- Download CV -->
-      <div class="cv">
-        <a
-          class="link_cv"
-          href="https://drive.google.com/uc?export=download&id=1Ej0NdoNREQ7hUlROfXLjyXp2QrPRNpuA"
-          download=""
-        >
-          Download PDF
-        </a>
-      </div>
+
     </aside>
 
     <!-- Main Content -->
@@ -174,7 +242,7 @@
             Middle DevOps Engineer
             <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
           </h4>
-          <span class="date">Jul 2024 – Present</span>
+          <span class="date">Jul 2024 — Present</span>
           <p>
             • Managing and optimizing infrastructure on VMware vCenter<br>
             • Ensuring CI/CD automation and efficient deployment processes<br>
@@ -193,7 +261,7 @@
             Middle DevOps Engineer
             <a class="company" href="http://customsolutions.info/">Custom Solutions</a>
           </h4>
-          <span class="date">Sep 2023 – Jul 2024</span>
+          <span class="date">Sep 2023 — Jul 2024</span>
           <p>
             • Choosing and configuring AWS cloud services<br>
             • Designing and implementing a microservices architecture<br>
@@ -211,7 +279,7 @@
             Middle DevOps Engineer
             <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
           </h4>
-          <span class="date">Mar 2022 – Mar 2023</span>
+          <span class="date">Mar 2022 — Mar 2023</span>
           <p>
             • DevOps solutions development and implementation<br>
             • Technical support to other engineers<br>
@@ -231,7 +299,7 @@
             Junior DevOps Engineer
             <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
           </h4>
-          <span class="date">Jun 2021 – Mar 2022</span>
+          <span class="date">Jun 2021 — Mar 2022</span>
           <p>
             • Participating in basic infrastructure tasks and configurations.<br>
             • Assisting in monitoring system performance and taking basic actions based on alerts.<br>
@@ -248,7 +316,7 @@
             System Administrator
             <a class="company" href="https://online-apteka.com.ua">Med-Service Group</a>
           </h4>
-          <span class="date">Feb 2021 – Jun 2021</span>
+          <span class="date">Feb 2021 — Jun 2021</span>
           <p>
             • Remote administration of office equipment, telephony<br>
             • Error-free operation of Windows OS, Windows Server, 1C<br>
@@ -266,7 +334,7 @@
             Tier 2-3 Technical Support
             <a class="company" href="http://www.eds-group.dp.ua">EDS Group</a>
           </h4>
-          <span class="date">Aug 2020 – Oct 2020</span>
+          <span class="date">Aug 2020 — Oct 2020</span>
           <p>
             • Service Desk, user accounts, customer support<br>
             • Cooperation with 1C programmers, telecom providers<br>
@@ -283,7 +351,7 @@
             System Administrator
             <span class="company">Vest-Dnepr</span>
           </h4>
-          <span class="date">Mar 2019 – Aug 2020</span>
+          <span class="date">Mar 2019 — Aug 2020</span>
           <p>
             • Implementation and support of IT infrastructures<br>
             • Administration of Windows Servers (AD, DHCP, Backup)<br>
@@ -300,7 +368,7 @@
             Chief Telecommunications Department
             <a class="company" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
           </h4>
-          <span class="date">Mar 2016 – Mar 2019</span>
+          <span class="date">Mar 2016 — Mar 2019</span>
         </div>
 
         <div class="card card--hidden">
@@ -308,7 +376,7 @@
             Senior Engineer
             <a class="company" href="https://www.yuzhnoye.com/en/home/">Yuzhnoye Design Office SDO</a>
           </h4>
-          <span class="date">Oct 2015 – Mar 2016</span>
+          <span class="date">Oct 2015 — Mar 2016</span>
         </div>
 
         <button class="btm-more">
@@ -324,7 +392,7 @@
           <div>
             <a class="university" href="https://www.kre.dp.ua">Koledzh Radioelektroniky Dnipro Ukraine</a>
             <h4>Faculty of Radio Engineering</h4>
-            <span class="date">Sep 2010 – Jun 2014</span>
+            <span class="date">Sep 2010 — Jun 2014</span>
           </div>
         </div>
       </section>
@@ -400,7 +468,7 @@
 
             <a class="university" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
             <h4>Human Resource</h4>
-            <span class="date">Sep 2018 – May 2018</span><br><br>
+            <span class="date">Sep 2018 — May 2018</span><br><br>
           </div>
           <button class="btm-more-courses">
             <i id="chevron-icon-courses" class="fas fa-chevron-down"></i>

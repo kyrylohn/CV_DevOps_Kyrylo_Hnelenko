@@ -655,7 +655,6 @@
   /* Social container - full width */
   .social-container {
     width: 100%;
-    margin-top: 40px;
     color: #fff;
     font-size: 12px;
     font-weight: 400;
@@ -815,7 +814,7 @@
   }
   .company {
     text-decoration: none;
-    color: #003077;
+    color: #60a5fa;
   }
   .work-experience {
     font-size: 12px;
@@ -884,7 +883,7 @@
   }
   .university {
     text-decoration: none;
-    color: #003077;
+    color: #60a5fa;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;

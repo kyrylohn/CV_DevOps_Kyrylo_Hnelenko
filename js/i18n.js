@@ -89,27 +89,27 @@ const TRANSLATIONS = {
         {
           title: "Senior DevOps Engineer",
           date: "Apr 2025 – Present",
-          description: "• Managing and optimizing infrastructure on VMware vCenter<br>• Ensuring CI/CD automation and efficient deployment processes<br>• Configuring and maintaining DNS, network security, and load balancing<br>• Administering databases and financial services<br>• Monitoring and troubleshooting systems with Grafana, Prometheus<br>• Securing infrastructure<br>• Leading DevOps initiatives and mentoring team members"
+          description: "• Scaling and optimizing secure private-cloud infrastructure on VMware vCenter, ensuring high availability and reliability across environment<br>• Standardizing environments (prod/stage/dev) and enforcing security-first deployment workflows across the company<br>• Integrating infrastructure with new fintech and blockchain products to accelerate time-to-market and simplify operational maintenance<br>• Improving monitoring, alerting, and logging coverage to boost incident response efficiency and uptime<br>• Mentoring junior DevOps engineers and building strong internal DevOps culture and practices"
         },
         {
           title: "Middle DevOps Engineer",
           date: "Jul 2024 – Apr 2025",
-          description: "• Managing and optimizing infrastructure on VMware vCenter<br>• Ensuring CI/CD automation and efficient deployment processes<br>• Configuring and maintaining DNS, network security, and load balancing<br>• Administering databases and financial services<br>• Monitoring and troubleshooting systems with Grafana, Prometheus<br>• Securing infrastructure"
+          description: "• Secured and stabilized infrastructure by migrating production to a controlled environment and eliminating critical vulnerabilities<br>• Built fintech-grade infrastructure with secure access, network segmentation, secrets management, and TLS<br>• Deployed self-hosted GitLab and automated CI/CD across all projects<br>• Implemented centralized monitoring & logging (Grafana, Prometheus, Loki)<br>• Hardened systems against DDoS and improved overall service reliability"
         },
         {
           title: "Middle DevOps Engineer", 
           date: "Sep 2023 – Jul 2024",
-          description: "• Choosing and configuring AWS cloud services<br>• Designing and implementing a microservices architecture<br>• Setting up CI/CD pipelines<br>• Maintaining and optimizing the infrastructure<br>• Training and consulting"
+          description: "• Delivered end-to-end DevOps support for a pipeline of fintech and blockchain projects, from requirements and architecture design to infrastructure delivery and hand-off<br>• Built cloud environments from scratch for multiple clients across AWS (primary), Azure, and GCP, based on project and compliance needs<br>• Implemented CI/CD pipelines using tools such as Argo CD, Jenkins, GitLab CI, ensuring reliable and automated release workflows<br>• Designed and deployed containerized workloads and Kubernetes clusters for scalable microservices-based systems<br>• Produced full infrastructure documentation and handover packages for engineering teams, enabling seamless maintenance and onboarding"
         },
         {
           title: "Middle DevOps Engineer",
           date: "Mar 2022 – Mar 2023", 
-          description: "• DevOps solutions development and implementation<br>• Technical support to other engineers<br>• Troubleshooting technical issues<br>• Participation in software development<br>• Cloud resource optimization<br>• Documentation"
+          description: "• Led preparation of infrastructure and processes for PCI DSS certification<br>• Designed and implemented security policies, access control processes, logging, backup & audit procedures<br>• Maintained and expanded VMware infrastructure and internal tooling<br>• Ensured uninterrupted operation of internal services and engineering systems during organizational changes"
         },
         {
           title: "Junior DevOps Engineer",
           date: "Jun 2021 – Mar 2022",
-          description: "• Participating in basic infrastructure tasks and configurations.<br>• Assisting in monitoring system performance and taking basic actions based on alerts.<br>• Contributing to the documentation of processes and procedures.<br>• Participating in the maintenance of software and systems."
+          description: "• Conducted cloud/vendor analysis, prepared commercial comparison, and recommended final provider aligned with business and regulatory requirements<br>• Built core internal services (GitLab, AD, Jira, Confluence, monitoring, VDI for 200+ staff)<br>• Assisted in critical recovery of a 6TB PostgreSQL cluster after security incident and migrated it to the new environment with zero data loss"
         },
         {
           title: "System Administrator",
@@ -196,52 +196,52 @@ const TRANSLATIONS = {
       positions: [
         {
           title: "Senior DevOps Інженер",
-          date: "Кві 2025 – Дотепер",
-          description: "• Управління та оптимізація інфраструктури на VMware vCenter<br>• Забезпечення автоматизації CI/CD та ефективних процесів розгортання<br>• Налаштування та підтримка DNS, мережевої безпеки та балансування навантаження<br>• Адміністрування баз даних та фінансових сервісів<br>• Моніторинг та усунення неполадок систем за допомогою Grafana, Prometheus<br>• Забезпечення безпеки інфраструктури<br>• Керівництво DevOps ініціативами та менторство команди"
+          date: "Квітень 2025 – Дотепер",
+          description: "• Масштабування та оптимізація безпечної приватно-хмарної інфраструктури на VMware vCenter із забезпеченням високої доступності та надійності<br>• Стандартизація середовищ (prod/stage/dev) та впровадження робочих процесів розгортання з пріоритетом безпеки<br>• Інтеграція інфраструктури з новими фінтех та блокчейн продуктами для прискорення виходу на ринок та спрощення операційного обслуговування<br>• Покращення покриття моніторингу, сповіщень та логування для підвищення ефективності реагування на інциденти та часу роботи<br>• Менторство молодших DevOps інженерів та побудова сильної внутрішньої DevOps культури та практик"
         },
         {
           title: "Middle DevOps Інженер",
-          date: "Лип 2024 – Кві 2025",
-          description: "• Управління та оптимізація інфраструктури на VMware vCenter<br>• Забезпечення автоматизації CI/CD та ефективних процесів розгортання<br>• Налаштування та підтримка DNS, мережевої безпеки та балансування навантаження<br>• Адміністрування баз даних та фінансових сервісів<br>• Моніторинг та усунення неполадок систем за допомогою Grafana, Prometheus<br>• Забезпечення безпеки інфраструктури"
+          date: "Липень 2024 – Квітень 2025",
+          description: "• Захистив та стабілізував інфраструктуру шляхом міграції production до контрольованого середовища та усунення критичних вразливостей<br>• Побудував фінтех-рівня інфраструктуру із захищеним доступом, сегментацією мережі, управлінням секретами та TLS<br>• Розгорнув самохостинговий GitLab та автоматизував CI/CD для всіх проектів<br>• Впровадив централізований моніторинг та логування (Grafana, Prometheus, Loki)<br>• Зміцнив системи проти DDoS та покращив загальну надійність сервісів"
         },
         {
           title: "Middle DevOps Інженер",
-          date: "Вер 2023 – Лип 2024",
-          description: "• Вибір та налаштування хмарних сервісів AWS<br>• Проектування та впровадження мікросервісної архітектури<br>• Налаштування CI/CD пайплайнів<br>• Підтримка та оптимізація інфраструктури<br>• Навчання та консультування"
+          date: "Вересень 2023 – Липень 2024",
+          description: "• Забезпечив повну DevOps підтримку для потоку фінтех та блокчейн проектів, від вимог та проектування архітектури до доставки інфраструктури та передачі<br>• Побудував хмарні середовища з нуля для декількох клієнтів на AWS (основний), Azure та GCP на основі потреб проекту та відповідності<br>• Впровадив CI/CD конвеєри з використанням інструментів таких як Argo CD, Jenkins, GitLab CI, забезпечуючи надійні та автоматизовані робочі процеси випуску<br>• Спроектував та розгорнув контейнеризовані робочі навантаження та кластери Kubernetes для масштабованих систем на основі мікросервісів<br>• Створив повну документацію інфраструктури та пакети передачі для інженерних команд, забезпечуючи безперебійне обслуговування та адаптацію"
         },
         {
           title: "Middle DevOps Інженер",
-          date: "Бер 2022 – Бер 2023",
-          description: "• Розробка та впровадження DevOps рішень<br>• Технічна підтримка інших інженерів<br>• Усунення технічних проблем<br>• Участь у розробці програмного забезпечення<br>• Оптимізація хмарних ресурсів<br>• Документування"
+          date: "Березень 2022 – Березень 2023",
+          description: "• Очолив підготовку інфраструктури та процесів для сертифікації PCI DSS<br>• Спроектував та впровадив політики безпеки, процеси контролю доступу, логування, резервного копіювання та аудиту<br>• Підтримував та розширював VMware інфраструктуру та внутрішні інструменти<br>• Забезпечив безперебійну роботу внутрішніх сервісів та інженерних систем під час організаційних змін"
         },
         {
           title: "Junior DevOps Інженер",
-          date: "Чер 2021 – Бер 2022",
-          description: "• Участь у базових завданнях інфраструктури та конфігураціях<br>• Допомога в моніторингу продуктивності системи та виконанні базових дій на основі сповіщень<br>• Внесок у документування процесів та процедур<br>• Участь у підтримці програмного забезпечення та систем"
+          date: "Червень 2021 – Березень 2022",
+          description: "• Провів аналіз хмарних/вендорських рішень, підготував комерційне порівняння та рекомендував остаточного провайдера відповідно до бізнес-вимог та нормативних вимог<br>• Побудував основні внутрішні сервіси (GitLab, AD, Jira, Confluence, моніторинг, VDI для 200+ співробітників)<br>• Допоміг у критичному відновленні кластера PostgreSQL об'ємом 6 ТБ після інциденту безпеки та мігрував його в нове середовище без втрати даних"
         },
         {
           title: "Системний адміністратор",
-          date: "Лют 2021 – Чер 2021", 
+          date: "Лютий 2021 – Червень 2021", 
           description: "• Віддалене адміністрування офісного обладнання, телефонії<br>• Безперебійна робота Windows OS, Windows Server, 1C<br>• Резервне копіювання та відновлення даних<br>• Технічна підтримка та допомога<br>• Робота з Active Directory"
         },
         {
           title: "Технічна підтримка Tier 2-3",
-          date: "Сер 2020 – Жов 2020",
-          description: "• Service Desk, облікові записи користувачів, підтримка клієнтів<br>• Співпраця з програмістами 1C, телекомунікаційними провайдерами<br>• Усунення неполадок LAN<br>• Робота з ARP, TCP/IP, DHCP, DNS"
+          date: "Серпень 2020 – Жовтень 2020",
+          description: "• Service Desk, облікові записи користувачів, підтримка клієнтів<br>• Співпраця з програмістами 1C, телекомунікаційними провайдерами<br>• Усунення несправностей LAN<br>• Робота з ARP, TCP/IP, DHCP, DNS"
         },
         {
           title: "Системний адміністратор",
-          date: "Бер 2019 – Сер 2020",
+          date: "Березень 2019 – Серпень 2020",
           description: "• Впровадження та підтримка IT інфраструктур<br>• Адміністрування Windows Servers (AD, DHCP, Backup)<br>• VMware ESXi (базова конфігурація, обслуговування)<br>• Управління LAN, портативними пристроями"
         },
         {
           title: "Начальник відділу телекомунікацій",
-          date: "Бер 2016 – Бер 2019",
+          date: "Березень 2016 – Березень 2019",
           description: ""
         },
         {
           title: "Провідний інженер", 
-          date: "Жов 2015 – Бер 2016",
+          date: "Жовтень 2015 – Березень 2016",
           description: ""
         }
       ]
@@ -249,7 +249,7 @@ const TRANSLATIONS = {
     education: {
       university: "Коледж радіоелектроніки Дніпро Україна",
       faculty: "Факультет радіотехніки",
-      date: "Вер 2010 – Чер 2014"
+      date: "Вересень 2010 – Червень 2014"
     },
     ui: {
       seeMore: "...детальніше",
@@ -267,7 +267,7 @@ const TRANSLATIONS = {
     },
     contact: {
       title: "Надішліть мені повідомлення",
-      name: "Ім'я", 
+      name: "Ім'я",
       email: "Email",
       message: "Повідомлення",
       send: "Надіслати повідомлення"
@@ -932,7 +932,7 @@ const initializeI18n = () => {
     window.i18n = new I18n();
     
     // Development mode logging
-    if (process?.env?.NODE_ENV === 'development') {
+    if (typeof process !== 'undefined' && process?.env?.NODE_ENV === 'development') {
       console.log('I18n Stats:', window.i18n.getStats());
       
       const validation = window.i18n.validateTranslations();

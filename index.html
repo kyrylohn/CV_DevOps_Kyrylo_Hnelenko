@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Information Security / DevSecOps Engineer with 5+ years securing fintech and banking infrastructure. Hands-on with security monitoring (SIEM/log analytics), incident response, vulnerability scanning, DLP, endpoint protection, network security, and PCI DSS / NBU compliance." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="CV DevOps" />
+  <meta property="og:site_name" content="Hnelenko Kyrylo" />
+  <meta property="og:url" content="https://github.com/kyrylohn/CV_DevOps_Kyrylo_Hnelenko.git" />
+  <meta property="og:description" content="Information Security / DevSecOps Engineer with 5+ years securing fintech and banking infrastructure. Skilled in security monitoring, incident response, vulnerability management, DLP, endpoint protection, and PCI DSS / NBU compliance." />
+  <meta property="og:image" content="./img/photo.png" />
+
+  <title>CV DevOps | Kyrylo Hnelenko</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a9e1192225.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <button class="hamburger-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="hamburger-dropdown">
+      <div class="menu-item language-selector">
+        <i class="fas fa-globe"></i>
+        <span data-translate="menu.language">Language</span>
+        <div class="language-options">
+          <button class="lang-option" data-lang="en">🇺🇸 English</button>
+          <button class="lang-option" data-lang="uk">🇺🇦 Українська</button>
+        </div>
+      </div>
+      
+      <div class="menu-item theme-selector">
+        <i class="fas fa-moon"></i>
+        <span data-translate="menu.theme">Theme</span>
+        <div class="theme-toggle">
+          <button class="theme-option active" data-theme="light">
+            <i class="fas fa-sun"></i>
+            <span data-translate="menu.light">Light</span>
+          </button>
+          <button class="theme-option" data-theme="dark">
+            <i class="fas fa-moon"></i>
+            <span data-translate="menu.dark">Dark</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="menu-item contact-form-item">
+        <i class="fab fa-telegram"></i>
+        <span data-translate="menu.contact">Send Message</span>
+        <button class="contact-form-toggle">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </div>
+      
+      <!-- Contact Form Modal -->
+      <div class="contact-form-modal">
+        <div class="contact-form-content">
+          <div class="contact-form-header">
+            <h3 data-translate="contact.title">Send me a message</h3>
+            <button class="contact-form-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName" data-translate="contact.name">Name</label>
+              <input type="text" id="contactName" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail" data-translate="contact.email">Email</label>
+              <input type="email" id="contactEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage" data-translate="contact.message">Message</label>
+              <textarea id="contactMessage" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-submit" data-translate="contact.send">Send Message</button>
+              <div class="form-status" id="formStatus"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <i class="fas fa-download"></i>
+        <a href="https://drive.google.com/uc?export=download&id=1-Y5ZCzOO6A1G_H3aREF0_-6O7SdCk29J" download data-translate="menu.downloadPdf">Download PDF</a>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-container">
+        <ul class="social">
+          <li class="social__link telegram">
+            <a class="link" href="https://t.me/kyrylo_hn" aria-label="Telegram">
+              <i class="fab fa-telegram-plane icons"></i>
+            </a>
+          </li>
+          <li class="social__link viber">
+            <a class="link" href="viber://add?number=380672923375" aria-label="Viber">
+              <i class="fab fa-viber icons"></i>
+            </a>
+          </li>
+          <li class="social__link linkedin">
+            <a class="link" href="https://www.linkedin.com/in/kyrylohn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin icons"></i>
+            </a>
+          </li>
+          <li class="social__link github">
+            <a class="link" href="https://github.com/kyrylohn" aria-label="GitHub">
+              <i class="fab fa-github icons"></i>
+            </a>
+          </li>
+          <li class="social__link codepen">
+            <a class="link" href="https://codepen.io/gnelenkok" aria-label="CodePen">
+              <i class="fab fa-codepen icons"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img class="my-photo" src="./img/photo.png" alt="Photo of Kyrylo Hnelenko" />
+
+      <!-- Contacts -->
+      <div class="contacts-container">
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          Dnipro
+        </p>
+        <p>
+          <i class="far fa-calendar-alt"></i>
+          May 16, 1994
+        </p>
+        <p>
+          <a class="link" href="tel:+380672923375">
+            <i class="fas fa-phone-square-alt"></i>
+            +380672923375
+          </a>
+        </p>
+        <p>
+          <a class="link" href="mailto:kyrylohn@gmail.com">
+            <i class="fas fa-envelope"></i>
+            kyrylohn@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <!-- Tech Skills -->
+      <div class="tech-skills-container">
+        <h3>Tech Skills</h3>
+        <ul>
+          <li><span class="skills">Security Monitoring &amp; SIEM / Log Analytics (Grafana, Prometheus, Loki; ELK / Wazuh)</span></li>
+          <li><span class="skills">Incident Response &amp; Threat Detection</span></li>
+          <li><span class="skills">Vulnerability Scanning &amp; Internal Pentesting</span></li>
+          <li><span class="skills">Endpoint Protection / EDR &amp; Antivirus (ESET)</span></li>
+          <li><span class="skills">DLP Concepts (Data Loss Prevention)</span></li>
+          <li><span class="skills">PCI DSS &amp; NBU #95 Compliance</span></li>
+          <li><span class="skills">SWIFT CSCF Awareness</span></li>
+          <li><span class="skills">Network Security &amp; Segmentation, TLS, Firewalls</span></li>
+          <li><span class="skills">Secrets Management &amp; Access Control (IAM, Active Directory)</span></li>
+          <li><span class="skills">Security Policies, Documentation &amp; Reporting</span></li>
+          <li><span class="skills">Linux (Ubuntu Server, CentOS) &amp; Windows Server</span></li>
+          <li><span class="skills">VMware vCenter, ESXi; Cloud (AWS, Azure)</span></li>
+          <li><span class="skills">Automation &amp; Scripting (Bash, Python)</span></li>
+          <li><span class="skills">CI/CD &amp; DevSecOps (GitLab CI/CD, Jenkins, Docker, Kubernetes)</span></li>
+          <li><span class="skills">Networking (OSI, TCP/IP), Nginx, Databases (MySQL, PostgreSQL)</span></li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="soft-skills-container">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li><span class="skills">Security Incident Handling &amp; Troubleshooting</span></li>
+          <li><span class="skills">Risk Awareness &amp; Attention to Detail</span></li>
+          <li><span class="skills">Technical Writing &amp; Security Documentation</span></li>
+          <li><span class="skills">Reporting to Management</span></li>
+          <li><span class="skills">Team Collaboration &amp; Communication</span></li>
+          <li><span class="skills">Agile / Scrum, GTD</span></li>
+          <li><span class="skills">Proactivity &amp; Initiative</span></li>
+          <li><span class="skills">Adaptability &amp; Flexibility</span></li>
+          <li><span class="skills">Continuous Learning</span></li>
+        </ul>
+      </div>
+
+      <!-- Language Skills -->
+      <div class="language">
+        <h3>Languages</h3>
+        <span>Deutsch A1 Elementary</span>
+        <div class="bar de"><span></span></div>
+
+        <span>Français A1 Elementary</span>
+        <div class="bar fr"><span></span></div>
+
+        <span>English B1 Intermediate</span>
+        <div class="bar en"><span></span></div>
+
+        <span>Ukrainian Native</span>
+        <div class="bar uk"><span></span></div>
+
+        <span>Russian Trying to forget</span>
+        <div class="bar ru"><span></span></div>
+      </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="about-me-container">
+      <!-- Intro Section -->
+      <section>
+        <h2 class="profession">Information Security / DevSecOps Engineer</h2>
+        <h1 class="name">Kyrylo Hnelenko</h1>
+        <p>
+          Information Security / DevSecOps Engineer with 5+ years securing fintech and banking infrastructure.<br />
+          Built secure infrastructure from the ground up multiple times and led PCI DSS process and documentation end to end.<br />
+          Hands-on with security monitoring and log analytics, incident response, vulnerability scanning, network segmentation, endpoint protection, and DLP concepts.<br /><br />
+          Focused on multi-layer defense against cyber threats, regulatory compliance (PCI DSS, NBU #95), and operational resilience.
+        </p>
+      </section>
+
+      <!-- Work Experience -->
+      <section class="work-experience">
+        <h3 class="about-me-title">Work Experience</h3>
+
+        <div class="readmore">
+          <h4 class="profession-title">
+            Senior DevSecOps / Information Security Engineer
+            <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
+          </h4>
+          <span class="date">Apr 2025 — Present</span>
+          <p>
+            • Designing and operating multi-layer defense for a fintech payment platform, hardening secure private-cloud infrastructure on VMware vCenter<br>
+            • Expanding security monitoring, log correlation and alerting to speed up detection of and response to suspicious events and security incidents<br>
+            • Running vulnerability scans of network and applications and driving remediation of findings<br>
+            • Enforcing network segmentation, access control, secrets management and TLS across prod/stage/dev environments<br>
+            • Producing security policies, hardening standards and reporting on the security posture for management
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="readmore">
+          <h4 class="profession-title">
+            DevSecOps Engineer
+            <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
+          </h4>
+          <span class="date">Jul 2024 – Apr 2025</span>
+          <p>
+            • Secured and stabilized the platform by migrating production to a controlled environment and eliminating critical vulnerabilities<br>
+            • Built fintech-grade infrastructure from scratch with secure access, network segmentation, secrets management and TLS<br>
+            • Implemented centralized security monitoring &amp; logging (Grafana, Prometheus, Loki) for threat detection and incident investigation<br>
+            • Hardened systems against DDoS and other attacks, improving resilience and uptime<br>
+            • Deployed self-hosted GitLab and secure automated CI/CD across all projects
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="readmore">
+          <h4 class="profession-title">
+            DevSecOps Engineer
+            <a class="company" href="http://customsolutions.info/">Custom Solutions</a>
+          </h4>
+          <span class="date">Sep 2023 — Jul 2024</span>
+          <p>
+            • Delivered secure end-to-end infrastructure for a pipeline of fintech and blockchain projects, from architecture design to delivery and hand-off<br>
+            • Built secure cloud environments from scratch for multiple clients across AWS (primary), Azure and GCP based on project and compliance needs<br>
+            • Implemented secure CI/CD pipelines (Argo CD, Jenkins, GitLab CI) with controlled access and reliable release workflows<br>
+            • Designed network segmentation, access control and monitoring for microservices-based Kubernetes systems<br>
+            • Produced full infrastructure and security documentation and handover packages for engineering teams
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="readmore">
+          <h4 class="profession-title">
+            DevOps / Information Security Engineer
+            <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
+          </h4>
+          <span class="date">Mar 2022 — Mar 2023</span>
+          <p>
+            • Led preparation of infrastructure and processes for PCI DSS certification, building the processes and documentation end to end<br>
+            • Designed and implemented security policies, access control, logging, backup and audit procedures<br>
+            • Set up logging and monitoring to detect anomalies and support incident investigation<br>
+            • Maintained and hardened VMware infrastructure and internal security tooling
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <!-- Hidden Cards -->
+        <div class="card card--hidden readmore">
+          <h4 class="profession-title">
+            Junior DevOps Engineer
+            <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
+          </h4>
+          <span class="date">Jun 2021 — Mar 2022</span>
+          <p>
+            • Conducted cloud/vendor analysis, prepared commercial comparison, and recommended final provider aligned with business and regulatory requirements<br>
+            • Built core internal services (GitLab, AD, Jira, Confluence, monitoring, VDI for 200+ staff)<br>
+            • Assisted in critical recovery of a 6TB PostgreSQL cluster after security incident and migrated it to the new environment with zero data loss
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="card card--hidden readmore">
+          <h4 class="profession-title">
+            System Administrator
+            <a class="company" href="https://online-apteka.com.ua">Med-Service Group</a>
+          </h4>
+          <span class="date">Feb 2021 — Jun 2021</span>
+          <p>
+            • Administered endpoint antivirus protection (ESET) and Windows OS / Windows Server, 1C<br>
+            • Managed Active Directory accounts and access<br>
+            • Data backup &amp; recovery<br>
+            • Remote administration of office equipment and telephony<br>
+            • Technical support &amp; assistance
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="card card--hidden readmore">
+          <h4 class="profession-title">
+            Tier 2-3 Technical Support
+            <a class="company" href="http://www.eds-group.dp.ua">EDS Group</a>
+          </h4>
+          <span class="date">Aug 2020 — Oct 2020</span>
+          <p>
+            • Service Desk, user accounts, customer support<br>
+            • Cooperation with 1C programmers, telecom providers<br>
+            • LAN troubleshooting<br>
+            • Working with ARP, TCP/IP, DHCP, DNS
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="card card--hidden readmore">
+          <h4 class="profession-title">
+            System Administrator
+            <span class="company">Vest-Dnepr</span>
+          </h4>
+          <span class="date">Mar 2019 — Aug 2020</span>
+          <p>
+            • Implementation and support of IT infrastructures with a focus on reliability and security<br>
+            • Administration of Windows Servers (AD, DHCP, Backup) and endpoint antivirus (ESET)<br>
+            • VMware ESXi (config, maintenance)<br>
+            • Managing LAN, network access and portable devices
+          </p>
+          <p class="readmore-link">
+            <a href="#">...see more</a>
+          </p>
+        </div>
+
+        <div class="card card--hidden">
+          <h4 class="profession-title">
+            Chief Telecommunications Department
+            <a class="company" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
+          </h4>
+          <span class="date">Mar 2016 — Mar 2019</span>
+        </div>
+
+        <div class="card card--hidden">
+          <h4 class="profession-title">
+            Senior Engineer
+            <a class="company" href="https://www.yuzhnoye.com/en/home/">Yuzhnoye Design Office SDO</a>
+          </h4>
+          <span class="date">Oct 2015 — Mar 2016</span>
+        </div>
+
+        <button class="btm-more">
+          <i id="chevron-icon" class="fas fa-chevron-down"></i>
+          <span>More</span>
+        </button>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <h3 class="about-me-title">Education</h3>
+        <div class="education">
+          <div>
+            <a class="university" href="https://www.kre.dp.ua">Koledzh Radioelektroniky Dnipro Ukraine</a>
+            <h4>Faculty of Radio Engineering</h4>
+            <span class="date">Sep 2010 — Jun 2014</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Licenses and Certificates -->
+      <section>
+        <h3 class="about-me-title">Licenses and Certificates</h3>
+        <div class="education licenses-container">
+          <div>
+            <a class="university" href="https://www.linkedin.com/learning/certificates/4ec4a14f1cbea87435aedce0cde0f46153ba162bebdf4a29659fca20ba8427a0">
+              AWS: Deployment, Provisioning, and Automation
+            </a><br>
+            <a class="university" href="https://www.linkedin.com/learning/certificates/711b0cc00acf27e746e1a45976b7d440fc4bb4133fd9d64433fd58dee455ea11">
+              Building Tools with Python
+            </a><br>
+            <a class="university" href="https://www.linkedin.com/learning/certificates/7d67967d645c075a4b304b57419b520e71d5fe9baccfdbd1687270feb038c8a2">
+              Docker Essential Training
+            </a><br>
+            <a class="university" href="https://www.linkedin.com/learning/certificates/ebd602219f87b58e7e52395f3f286eb0dac64c2c9481955ec3c31b5bec950089">
+              Git for Teams
+            </a><br>
+            <a class="university" href="https://www.linkedin.com/learning/certificates/a90e7903f5a8d5f533bb20b0f12f8e1b3294e513d10b08bc873640a5a81984a0">
+              Kubernetes: Essential Tools
+            </a><br>
+          </div>
+          <div class="card--hidden-licenses">
+            <a class="university" href="#">Linux Foundation Cert Prep: Storage Management (Ubuntu)</a><br>
+            <a class="university" href="#">Linux Foundation Cert Prep: User &amp; Group Management (Ubuntu)</a><br>
+            <a class="university" href="#">Linux: Network Configuration</a><br>
+            <a class="university" href="#">Linux: Package Management (CentOS)</a><br>
+            <a class="university" href="#">Ubuntu Linux: Essential Commands</a><br>
+          </div>
+          <button class="btm-more-licenses">
+            <i id="chevron-icon-licenses" class="fas fa-chevron-down"></i>
+            <span>More</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Courses -->
+      <section>
+        <h3 class="about-me-title">Courses</h3>
+        <div class="education courses-container">
+          <div>
+            <a class="university" href="https://projector.institute">Projector Institute</a>
+            <h4>Highload Software Architecture</h4>
+            <span class="date">Issued Jun 2024 · Expired Oct 2024</span><br><br>
+
+            <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
+            <h4>AWS Cloud Practitioner Essentials</h4>
+            <span class="date">Jan 2023</span><br><br>
+
+            <a class="university" href="https://www.udemy.com/">Udemy</a>
+            <h4>Learn to Code in Python 3: Beginner to Advanced</h4>
+            <span class="date">Jan 2023</span><br><br>
+
+            <a class="university" href="https://www.udemy.com/">Udemy</a>
+            <h4>Prometheus | The Complete Hands-On for Monitoring &amp; Alerting</h4>
+            <span class="date">Jan 2023</span><br><br>
+          </div>
+          <div class="card--hidden-courses">
+            <a class="university" href="https://www.udemy.com/">Ubuntu Linux Fundamentals: Linux Server Administration Basics</a>
+            <h4></h4>
+            <span class="date">Jan 2023</span><br><br>
+
+            <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
+            <h4>DevOps Winter Program</h4>
+            <span class="date">Dec 2020</span><br><br>
+
+            <a class="university" href="https://goit.ua">GoIT</a>
+            <h4>FULLSTACK ONLINE UKRAINE</h4>
+            <span class="date">Aug 2020</span><br><br>
+
+            <a class="university" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
+            <h4>Human Resource</h4>
+            <span class="date">Sep 2018 — May 2018</span><br><br>
+          </div>
+          <button class="btm-more-courses">
+            <i id="chevron-icon-courses" class="fas fa-chevron-down"></i>
+            <span>More</span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/i18n.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

@@ -2,498 +2,328 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Experienced DevOps Engineer with 5+ years in automation, CI/CD, and cloud infrastructure. Proficient in VMware vCenter, Docker, Kubernetes, GitLab CI/CD, and networking." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyrylo Hnelenko | Senior DevOps Engineer</title>
+  <meta name="description" content="Senior DevOps Engineer with 5 years in fintech, crypto and AI. VMware private cloud and AWS, GitLab CI/CD, HashiCorp Vault, DevSecOps, PCI DSS." />
 
-  <!-- Open Graph meta tags -->
-  <meta property="og:title" content="CV DevOps" />
-  <meta property="og:site_name" content="Hnelenko Kyrylo" />
-  <meta property="og:url" content="https://github.com/kyrylohn/CV_DevOps_Kyrylo_Hnelenko.git" />
-  <meta property="og:description" content="Experienced DevOps Engineer with 5+ years in automation, CI/CD, and cloud infrastructure. Skilled in VMware vCenter, Docker, Kubernetes, and Linux systems." />
-  <meta property="og:image" content="./img/photo.png" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Kyrylo Hnelenko | Senior DevOps Engineer" />
+  <meta property="og:description" content="Fintech security & compliance. VMware, AWS, GitLab CI, Vault." />
+  <meta property="og:url" content="https://kyrylohn.github.io/CV_DevOps_Kyrylo_Hnelenko/" />
+  <meta property="og:image" content="https://kyrylohn.github.io/CV_DevOps_Kyrylo_Hnelenko/img/photo.jpg" />
 
-  <title>CV DevOps | Kyrylo Hnelenko</title>
+  <script>
+    // Apply saved theme/language before first paint to avoid a flash
+    (function () {
+      var d = document.documentElement;
+      var lang = localStorage.getItem('cv-lang') ||
+        ((navigator.language || '').toLowerCase().startsWith('uk') ? 'uk' : 'en');
+      d.lang = lang;
+      var theme = localStorage.getItem('cv-theme');
+      if (theme) d.dataset.theme = theme;
+    })();
+  </script>
 
-  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet" />
-
-  <!-- FontAwesome Icons -->
-  <script src="https://kit.fontawesome.com/a9e1192225.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Hamburger Menu -->
-  <div class="hamburger-menu">
-    <button class="hamburger-toggle" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="hamburger-dropdown">
-      <div class="menu-item language-selector">
-        <i class="fas fa-globe"></i>
-        <span data-translate="menu.language">Language</span>
-        <div class="language-options">
-          <button class="lang-option" data-lang="en">🇺🇸 English</button>
-          <button class="lang-option" data-lang="uk">🇺🇦 Українська</button>
-        </div>
-      </div>
-      
-      <div class="menu-item theme-selector">
-        <i class="fas fa-moon"></i>
-        <span data-translate="menu.theme">Theme</span>
-        <div class="theme-toggle">
-          <button class="theme-option active" data-theme="light">
-            <i class="fas fa-sun"></i>
-            <span data-translate="menu.light">Light</span>
-          </button>
-          <button class="theme-option" data-theme="dark">
-            <i class="fas fa-moon"></i>
-            <span data-translate="menu.dark">Dark</span>
-          </button>
-        </div>
-      </div>
-      
-      <div class="menu-item contact-form-item">
-        <i class="fab fa-telegram"></i>
-        <span data-translate="menu.contact">Send Message</span>
-        <button class="contact-form-toggle">
-          <i class="fas fa-envelope"></i>
-        </button>
-      </div>
-      
-      <!-- Contact Form Modal -->
-      <div class="contact-form-modal">
-        <div class="contact-form-content">
-          <div class="contact-form-header">
-            <h3 data-translate="contact.title">Send me a message</h3>
-            <button class="contact-form-close">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="contactName" data-translate="contact.name">Name</label>
-              <input type="text" id="contactName" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="contactEmail" data-translate="contact.email">Email</label>
-              <input type="email" id="contactEmail" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="contactMessage" data-translate="contact.message">Message</label>
-              <textarea id="contactMessage" name="message" rows="4" required></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn-submit" data-translate="contact.send">Send Message</button>
-              <div class="form-status" id="formStatus"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-      
-      <div class="menu-item">
-        <i class="fas fa-download"></i>
-        <a href="https://drive.google.com/uc?export=download&id=1-Y5ZCzOO6A1G_H3aREF0_-6O7SdCk29J" download data-translate="menu.downloadPdf">Download PDF</a>
-      </div>
+  <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="uk">До вмісту</span></a>
 
-      <!-- Social Links -->
-      <div class="social-container">
-        <ul class="social">
-          <li class="social__link telegram">
-            <a class="link" href="https://t.me/kyrylo_hn" aria-label="Telegram">
-              <i class="fab fa-telegram-plane icons"></i>
-            </a>
-          </li>
-          <li class="social__link viber">
-            <a class="link" href="viber://add?number=380672923375" aria-label="Viber">
-              <i class="fab fa-viber icons"></i>
-            </a>
-          </li>
-          <li class="social__link linkedin">
-            <a class="link" href="https://www.linkedin.com/in/kyrylohn" aria-label="LinkedIn">
-              <i class="fab fa-linkedin icons"></i>
-            </a>
-          </li>
-          <li class="social__link github">
-            <a class="link" href="https://github.com/kyrylohn" aria-label="GitHub">
-              <i class="fab fa-github icons"></i>
-            </a>
-          </li>
-          <li class="social__link codepen">
-            <a class="link" href="https://codepen.io/gnelenkok" aria-label="CodePen">
-              <i class="fab fa-codepen icons"></i>
-            </a>
-          </li>
-        </ul>
+  <div class="toolbar">
+    <div class="toolbar__group" role="group" aria-label="Language">
+      <button type="button" class="toggle" data-set-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="toggle" data-set-lang="uk" aria-pressed="false">UA</button>
+    </div>
+    <button type="button" class="toggle" id="theme-toggle">
+      <span data-l="en">Theme</span><span data-l="uk">Тема</span>
+    </button>
+  </div>
+
+  <header class="hero">
+    <div class="hero__text">
+      <h1 class="hero__name">Kyrylo<br />Hnelenko</h1>
+      <p class="hero__role">Senior DevOps Engineer</p>
+      <p class="hero__focus">
+        <span data-l="en">Fintech security &amp; compliance. VMware, AWS, GitLab CI, Vault.</span>
+        <span data-l="uk">Безпека й комплаєнс у фінтеху. VMware, AWS, GitLab CI, Vault.</span>
+      </p>
+      <p class="hero__place">
+        <span data-l="en">Dnipro, Ukraine. Open to remote work, UTC+2/+3.</span>
+        <span data-l="uk">Дніпро, Україна. Відкритий до віддаленої роботи, UTC+2/+3.</span>
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="./CV_DevOps_Kyrylo_Hnelenko.pdf" download>
+          <span data-l="en">Download PDF</span><span data-l="uk">Завантажити PDF</span>
+        </a>
+        <button type="button" class="btn" id="contact-open">
+          <span data-l="en">Send a message</span><span data-l="uk">Написати</span>
+        </button>
       </div>
     </div>
-  </div>
+    <img class="hero__photo" src="./img/photo.jpg" width="640" height="640" alt="Kyrylo Hnelenko" />
+  </header>
 
-  <div class="main-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <img class="my-photo" src="./img/photo.png" alt="Photo of Kyrylo Hnelenko" />
+  <ul class="contacts">
+    <li><a href="mailto:kyrylohn@gmail.com">kyrylohn@gmail.com</a></li>
+    <li><a href="tel:+380672923375">+380 67 292 3375</a></li>
+    <li><a href="https://www.linkedin.com/in/kyrylohn">LinkedIn</a></li>
+    <li><a href="https://github.com/kyrylohn">GitHub</a></li>
+    <li><a href="https://t.me/kyrylo_hn">Telegram</a></li>
+  </ul>
 
-      <!-- Contacts -->
-      <div class="contacts-container">
-        <p>
-          <i class="fas fa-map-marker-alt"></i>
-          Dnipro
+  <main id="main">
+    <section class="section" aria-labelledby="h-summary">
+      <h2 id="h-summary" class="section__title"><span data-l="en">Summary</span><span data-l="uk">Про мене</span></h2>
+      <div class="section__body">
+        <p class="lede" data-l="en">
+          Senior DevOps Engineer with 5 years in fintech, crypto and AI, owning infrastructure end-to-end as a sole or lead DevOps engineer for development teams of 15-20 engineers. Built high-availability hybrid infrastructure (VMware private cloud and AWS) for 25+ fintech microservices from scratch, set up a weekly three-stage (dev, stage, prod) release process, prepared a financial platform for PCI DSS certification, and designed infrastructure for a multi-model LLM platform.
         </p>
-        <p>
-          <i class="far fa-calendar-alt"></i>
-          May 16, 1994
+        <p class="lede" data-l="uk">
+          Senior DevOps Engineer із 5 роками досвіду у фінтеху, крипто та AI. Відповідаю за інфраструктуру від початку до кінця як єдиний або провідний DevOps-інженер для команд розробки з 15–20 інженерів. З нуля побудував високодоступну гібридну інфраструктуру (приватна хмара VMware і AWS) для 25+ фінтех-мікросервісів, налагодив щотижневий триетапний реліз-процес (dev, stage, prod), підготував фінансову платформу до сертифікації PCI DSS і спроєктував інфраструктуру мультимодельної LLM-платформи.
         </p>
-        <p>
-          <a class="link" href="tel:+380672923375">
-            <i class="fas fa-phone-square-alt"></i>
-            +380672923375
-          </a>
-        </p>
-        <p>
-          <a class="link" href="mailto:kyrylohn@gmail.com">
-            <i class="fas fa-envelope"></i>
-            kyrylohn@gmail.com
-          </a>
-        </p>
+        <p data-l="en">DevSecOps mindset: Vault, Teleport, Zero Trust, vulnerability scanning in CI/CD. Mentored a junior DevOps engineer.</p>
+        <p data-l="uk">DevSecOps-підхід: Vault, Teleport, Zero Trust, сканування вразливостей у CI/CD. Менторив junior DevOps-інженера.</p>
       </div>
+    </section>
 
-      <!-- Tech Skills -->
-      <div class="tech-skills-container">
-        <h3>Tech Skills</h3>
-        <ul>
-          <li><span class="skills">CI/CD (GitLab CI/CD, Jenkins)</span></li>
-          <li><span class="skills">Docker, Kubernetes, Terraform</span></li>
-          <li><span class="skills">VMware vCenter, ESXi</span></li>
-          <li><span class="skills">Cloud &amp; Virtualization (AWS, Azure)</span></li>
-          <li><span class="skills">Automation &amp; Scripting (Bash, Python)</span></li>
-          <li><span class="skills">Monitoring (Grafana, Prometheus, Zabbix, Loki)</span></li>
-          <li><span class="skills">Linux (Ubuntu Server, CentOS)</span></li>
-          <li><span class="skills">Networking &amp; Security</span></li>
-          <li><span class="skills">GIT, GitLab, GitHub</span></li>
-          <li><span class="skills">Nginx, Apache</span></li>
-          <li><span class="skills">Database Management (MySQL, PostgreSQL)</span></li>
-          <li><span class="skills">Windows Server 2008/2012+</span></li>
-          <li><span class="skills">Active Directory</span></li>
-          <li><span class="skills">OSI TCP/IP</span></li>
-          <li><span class="skills">Automation &amp; Infrastructure as Code</span></li>
+    <section class="section" aria-labelledby="h-exp">
+      <h2 id="h-exp" class="section__title"><span data-l="en">Experience</span><span data-l="uk">Досвід</span></h2>
+      <div class="section__body">
+
+        <article class="company">
+          <header class="company__head">
+            <h3 class="company__name"><span data-l="en">Confidential FinTech &amp; Crypto Company (NDA)</span><span data-l="uk">Фінтех- і крипто-компанія (NDA)</span></h3>
+            <p class="company__about">
+              <span data-l="en">Fintech infrastructure provider (payments and crypto), Dnipro. Company name available upon request.</span>
+              <span data-l="uk">Фінтех-інфраструктура (платежі та крипто), Дніпро. Назву компанії повідомлю на запит.</span>
+            </p>
+          </header>
+
+          <div class="role role--current">
+            <p class="role__when"><span data-l="en">Apr 2025 – Jul 2026</span><span data-l="uk">квіт 2025 – лип 2026</span></p>
+            <h4 class="role__title">Senior DevOps Engineer</h4>
+            <p class="role__meta"><span data-l="en">Hybrid</span><span data-l="uk">Гібрид</span></p>
+            <ul class="role__list" data-l="en">
+              <li>Lead DevOps engineer owning the full infrastructure for the engineering team; onboarded and mentored a junior DevOps engineer.</li>
+              <li>Scaled the VMware vSphere private cloud for high availability and reliability; standardized production, staging and development environments and security-first deployment workflows across the company.</li>
+              <li>Ran production for several projects on AWS alongside the private cloud: EC2, VPC, Secrets Manager and PostgreSQL (both Amazon RDS and self-managed on EC2).</li>
+              <li>Co-designed with the tech lead and team leads a three-stage (dev, stage, prod) release process: a weekly release per project, each shipping around 10 tasks already validated at every stage.</li>
+              <li>Strengthened DevSecOps practices: Zero Trust access with Teleport, policy enforcement with Open Policy Agent (OPA), vulnerability scanning with Trivy and Snyk in CI/CD pipelines, RBAC.</li>
+              <li>Extended monitoring, alerting and logging coverage to speed up incident response, including real-time transaction monitoring.</li>
+            </ul>
+            <ul class="role__list" data-l="uk">
+              <li>Провідний DevOps-інженер, відповідальний за всю інфраструктуру інженерної команди; онбордив і менторив junior DevOps-інженера.</li>
+              <li>Масштабував приватну хмару VMware vSphere для високої доступності й надійності; стандартизував середовища production, staging і development та security-first процес деплою в усій компанії.</li>
+              <li>Вів продакшн кількох проєктів в AWS паралельно з приватною хмарою: EC2, VPC, Secrets Manager і PostgreSQL (як Amazon RDS, так і self-managed на EC2).</li>
+              <li>Разом із техлідом і тімлідами спроєктував триетапний реліз-процес (dev, stage, prod): щотижневий реліз кожного проєкту, близько 10 задач, уже перевірених на кожному етапі.</li>
+              <li>Посилив DevSecOps-практики: Zero Trust доступ через Teleport, політики Open Policy Agent (OPA), сканування вразливостей Trivy і Snyk у CI/CD, RBAC.</li>
+              <li>Розширив моніторинг, алертинг і логування для швидшого реагування на інциденти, зокрема моніторинг транзакцій у реальному часі.</li>
+            </ul>
+
+            <div class="projects">
+              <div class="project">
+                <h5 class="project__title"><span data-l="en">Crypto payment gateway</span><span data-l="uk">Крипто-платіжний шлюз</span></h5>
+                <p data-l="en">Delivered the complete infrastructure for a non-custodial gateway (QR/link checkout, API/POS integration, real-time dashboards), from architecture and CI/CD to monitoring and post-launch support.</p>
+                <p data-l="uk">Повна інфраструктура некастодіального шлюзу (оплата через QR і посилання, інтеграція API/POS, дашборди в реальному часі): від архітектури й CI/CD до моніторингу та підтримки після запуску.</p>
+              </div>
+              <div class="project">
+                <h5 class="project__title"><span data-l="en">Generative AI platform</span><span data-l="uk">Платформа генеративного AI</span></h5>
+                <p data-l="en">Designed infrastructure for a multi-model platform (text, image, video, audio) integrating dozens of LLMs; deployed LiteLLM as a unified gateway and built a routing layer that selects the model per request based on plan tier and task complexity.</p>
+                <p data-l="uk">Спроєктував інфраструктуру мультимодельної платформи (текст, зображення, відео, аудіо) з десятками LLM; розгорнув LiteLLM як єдиний шлюз і побудував шар маршрутизації, який обирає модель для кожного запиту залежно від тарифу та складності задачі.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="role">
+            <p class="role__when"><span data-l="en">Jun 2024 – Apr 2025</span><span data-l="uk">черв 2024 – квіт 2025</span></p>
+            <h4 class="role__title">Middle DevOps Engineer</h4>
+            <p class="role__meta">
+              <span data-l="en">On-site. Promoted to Senior after 10 months.</span>
+              <span data-l="uk">В офісі. Через 10 місяців підвищений до Senior.</span>
+            </p>
+            <ul class="role__list" data-l="en">
+              <li>Designed and launched the company's entire infrastructure: a VMware vSphere private cloud hosting 25+ fintech microservices across production, staging and development environments.</li>
+              <li>Migrated production to a controlled environment, eliminated critical vulnerabilities and restored operational stability.</li>
+              <li>Implemented secure access, network segmentation, secrets management with HashiCorp Vault, TLS and DDoS protection.</li>
+              <li>Deployed self-hosted GitLab and fully automated CI/CD for all services, eliminating manual releases.</li>
+              <li>Set up centralized observability with Prometheus, Grafana, Loki and Alertmanager.</li>
+            </ul>
+            <ul class="role__list" data-l="uk">
+              <li>Спроєктував і запустив усю інфраструктуру компанії: приватну хмару VMware vSphere з 25+ фінтех-мікросервісами в середовищах production, staging і development.</li>
+              <li>Переніс продакшн у контрольоване середовище, закрив критичні вразливості й відновив стабільну роботу.</li>
+              <li>Впровадив безпечний доступ, сегментацію мережі, керування секретами через HashiCorp Vault, TLS і захист від DDoS.</li>
+              <li>Розгорнув self-hosted GitLab і повністю автоматизований CI/CD для всіх сервісів, позбувшись ручних релізів.</li>
+              <li>Налаштував централізовану observability: Prometheus, Grafana, Loki, Alertmanager.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="company">
+          <header class="company__head">
+            <h3 class="company__name">Custom Solutions</h3>
+            <p class="company__about">
+              <span data-l="en">Outsourcing company serving fintech and blockchain clients, Dnipro.</span>
+              <span data-l="uk">Аутсорс-компанія з клієнтами у фінтеху й блокчейні, Дніпро.</span>
+            </p>
+          </header>
+          <div class="role">
+            <p class="role__when"><span data-l="en">Sep 2023 – Jul 2024</span><span data-l="uk">вер 2023 – лип 2024</span></p>
+            <h4 class="role__title">Middle DevOps Engineer</h4>
+            <p class="role__meta"><span data-l="en">Hybrid</span><span data-l="uk">Гібрид</span></p>
+            <ul class="role__list" data-l="en">
+              <li>Sole DevOps engineer for the company, covering infrastructure for all client projects and the internal development team.</li>
+              <li>Designed and delivered turnkey production infrastructure for multiple client projects on AWS (primary), Azure and GCP, selecting provider and stack per each client's compliance, security and technical requirements.</li>
+              <li>Deployed Kubernetes clusters and Docker-based containerized microservice workloads; provisioned infrastructure with Terraform.</li>
+              <li>Built CI/CD pipelines with GitLab CI, Jenkins and Argo CD, including automated rollbacks and versioning.</li>
+              <li>Set up internal development infrastructure on VMware ESXi: self-hosted GitLab, Grafana, MinIO, Docker with Portainer and project-specific VMs emulating production.</li>
+              <li>Produced documentation, runbooks and handover packages; consulted development teams on cloud architecture and security.</li>
+            </ul>
+            <ul class="role__list" data-l="uk">
+              <li>Єдиний DevOps-інженер компанії: інфраструктура всіх клієнтських проєктів і внутрішньої команди розробки.</li>
+              <li>Спроєктував і здав під ключ продакшн-інфраструктуру для кількох клієнтських проєктів в AWS (основна), Azure і GCP, підбираючи провайдера й стек під вимоги кожного клієнта щодо комплаєнсу, безпеки й техніки.</li>
+              <li>Розгортав кластери Kubernetes і контейнеризовані мікросервіси на Docker; описував інфраструктуру в Terraform.</li>
+              <li>Будував CI/CD-пайплайни на GitLab CI, Jenkins і Argo CD з автоматичними відкатами й версіонуванням.</li>
+              <li>Налаштував внутрішню інфраструктуру розробки на VMware ESXi: self-hosted GitLab, Grafana, MinIO, Docker із Portainer і проєктні VM, що емулюють продакшн.</li>
+              <li>Готував документацію, ранбуки й пакети передачі; консультував команди розробки з хмарної архітектури та безпеки.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="company">
+          <header class="company__head">
+            <h3 class="company__name">E-Groshi</h3>
+            <p class="company__about">
+              <span data-l="en">Financial platform, Dnipro. Member of a 3-person DevOps team.</span>
+              <span data-l="uk">Фінансова платформа, Дніпро. Команда з 3 DevOps-інженерів.</span>
+            </p>
+          </header>
+          <div class="role">
+            <p class="role__when"><span data-l="en">Mar 2022 – Mar 2023</span><span data-l="uk">бер 2022 – бер 2023</span></p>
+            <h4 class="role__title">Middle DevOps Engineer</h4>
+            <p class="role__meta"><span data-l="en">Hybrid</span><span data-l="uk">Гібрид</span></p>
+            <ul class="role__list" data-l="en">
+              <li>Led preparation of infrastructure and processes for PCI DSS certification: access control, audit logging, backup and disaster recovery procedures, security policies.</li>
+              <li>Maintained and expanded VMware infrastructure and internal tooling; kept internal services running through an organization-wide transition.</li>
+            </ul>
+            <ul class="role__list" data-l="uk">
+              <li>Вів підготовку інфраструктури й процесів до сертифікації PCI DSS: контроль доступу, журнали аудиту, процедури бекапу й disaster recovery, політики безпеки.</li>
+              <li>Підтримував і розширював VMware-інфраструктуру та внутрішні інструменти; зберіг роботу внутрішніх сервісів під час реорганізації компанії.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <p class="role__when"><span data-l="en">Jun 2021 – Mar 2022</span><span data-l="uk">черв 2021 – бер 2022</span></p>
+            <h4 class="role__title">Junior DevOps Engineer</h4>
+            <p class="role__meta">
+              <span data-l="en">Hybrid. Promoted to Middle after 9 months.</span>
+              <span data-l="uk">Гібрид. Через 9 місяців підвищений до Middle.</span>
+            </p>
+            <ul class="role__list" data-l="en">
+              <li>Evaluated hosting and cloud vendors, prepared a commercial comparison, selected the provider aligned with business and regulatory requirements, and helped lead the infrastructure migration.</li>
+              <li>Took part in the disaster recovery of a 6 TB PostgreSQL cluster after a security incident and migrated it to a secure environment with zero data loss.</li>
+              <li>Stood up core internal services for 200+ employees: GitLab, Active Directory, Jira, Confluence, monitoring and VDI.</li>
+            </ul>
+            <ul class="role__list" data-l="uk">
+              <li>Проаналізував хостинг- і хмарних провайдерів, підготував комерційне порівняння, обрав провайдера відповідно до бізнес- і регуляторних вимог і допоміг вести міграцію інфраструктури.</li>
+              <li>Брав участь в аварійному відновленні PostgreSQL-кластера на 6 ТБ після інциденту безпеки та мігрував його в захищене середовище без втрати даних.</li>
+              <li>Запустив ключові внутрішні сервіси для 200+ співробітників: GitLab, Active Directory, Jira, Confluence, моніторинг і VDI.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="h-skills">
+      <h2 id="h-skills" class="section__title"><span data-l="en">Skills</span><span data-l="uk">Навички</span></h2>
+      <div class="section__body">
+        <dl class="skills">
+          <div><dt><span data-l="en">Cloud &amp; virtualization</span><span data-l="uk">Хмари й віртуалізація</span></dt>
+            <dd>AWS (EC2, VPC, RDS, S3, Secrets Manager), Azure, GCP, VMware vSphere (vCenter, ESXi)</dd></div>
+          <div><dt><span data-l="en">Containers &amp; IaC</span><span data-l="uk">Контейнери та IaC</span></dt>
+            <dd>Kubernetes, Docker, Helm, Terraform, Ansible</dd></div>
+          <div><dt>CI/CD &amp; GitOps</dt>
+            <dd>GitLab CI/CD, Argo CD, Jenkins</dd></div>
+          <div><dt><span data-l="en">Security &amp; compliance</span><span data-l="uk">Безпека й комплаєнс</span></dt>
+            <dd>DevSecOps, HashiCorp Vault, Teleport, Open Policy Agent (OPA), Trivy, Snyk, Zero Trust, RBAC, PCI DSS</dd></div>
+          <div><dt>Observability</dt>
+            <dd>Prometheus, Grafana, Loki, Alertmanager, ELK Stack</dd></div>
+          <div><dt><span data-l="en">Data &amp; networking</span><span data-l="uk">Дані й мережі</span></dt>
+            <dd>PostgreSQL, MongoDB, MySQL, MinIO/S3, Nginx, HAProxy, DNS, VPN</dd></div>
+          <div><dt><span data-l="en">AI infrastructure</span><span data-l="uk">AI-інфраструктура</span></dt>
+            <dd>LLMOps, LiteLLM</dd></div>
+          <div><dt><span data-l="en">Linux &amp; scripting</span><span data-l="uk">Linux і скрипти</span></dt>
+            <dd>Linux (Ubuntu), Bash, Python</dd></div>
+          <div><dt><span data-l="en">Practices</span><span data-l="uk">Практики</span></dt>
+            <dd>
+              <span data-l="en">Site Reliability Engineering (SRE), high availability, disaster recovery, incident response, microservices</span>
+              <span data-l="uk">Site Reliability Engineering (SRE), висока доступність, disaster recovery, реагування на інциденти, мікросервіси</span>
+            </dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="h-courses">
+      <h2 id="h-courses" class="section__title"><span data-l="en">Courses &amp; training</span><span data-l="uk">Курси й навчання</span></h2>
+      <div class="section__body">
+        <ul class="plain">
+          <li><strong>The Linux Foundation</strong>
+            <span>Kubernetes Fundamentals (LFS258), Implementing DevSecOps (LFS262), DevOps and SRE Fundamentals: Implementing Continuous Delivery (LFS261), Jenkins Essentials (LFS267)</span></li>
+          <li><strong>Projector Institute</strong>
+            <span>Highload Software Architecture (2024)</span></li>
+          <li><strong>EPAM University Program</strong>
+            <span>DevOps Winter Program, AWS Cloud Practitioner Essentials</span></li>
         </ul>
       </div>
+    </section>
 
-      <!-- Soft Skills -->
-      <div class="soft-skills-container">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li><span class="skills">Debugging &amp; Troubleshooting</span></li>
-          <li><span class="skills">GTD (Getting Things Done)</span></li>
-          <li><span class="skills">Agile Methodology</span></li>
-          <li><span class="skills">Scrum Framework</span></li>
-          <li><span class="skills">Technical Writing &amp; Documentation</span></li>
-          <li><span class="skills">Team Collaboration &amp; Communication</span></li>
-          <li><span class="skills">Adaptability &amp; Flexibility</span></li>
-          <li><span class="skills">Proactivity &amp; Initiative</span></li>
-          <li><span class="skills">Continuous Learning</span></li>
-        </ul>
-      </div>
-
-      <!-- Language Skills -->
-      <div class="language">
-        <h3>Languages</h3>
-        <span>Deutsch A1 Elementary</span>
-        <div class="bar de"><span></span></div>
-
-        <span>Français A1 Elementary</span>
-        <div class="bar fr"><span></span></div>
-
-        <span>English B1 Intermediate</span>
-        <div class="bar en"><span></span></div>
-
-        <span>Ukrainian Native</span>
-        <div class="bar uk"><span></span></div>
-
-        <span>Russian Trying to forget</span>
-        <div class="bar ru"><span></span></div>
-      </div>
-
-    </aside>
-
-    <!-- Main Content -->
-    <main class="about-me-container">
-      <!-- Intro Section -->
-      <section>
-        <h2 class="profession">DevOps Engineer</h2>
-        <h1 class="name">Kyrylo Hnelenko</h1>
+    <section class="section section--split">
+      <div>
+        <h2 class="section__title"><span data-l="en">Education</span><span data-l="uk">Освіта</span></h2>
         <p>
-          Experienced DevOps Engineer with 5+ years in automation, CI/CD, and cloud infrastructure.<br />
-          Proficient in VMware vCenter, Docker, Kubernetes, GitLab CI/CD, and networking.<br />
-          Strong expertise in Linux systems, database management, and security optimization.<br /><br />
-          Focused on automation, scalability, security, and reliability in modern DevOps workflows.
+          <strong data-l="en">Dnipro College of Radio Electronics</strong><strong data-l="uk">Дніпровський коледж радіоелектроніки</strong><br />
+          <span data-l="en">Radio Engineering, 2010–2014</span><span data-l="uk">Радіотехніка, 2010–2014</span>
         </p>
-      </section>
+      </div>
+      <div>
+        <h2 class="section__title"><span data-l="en">Languages</span><span data-l="uk">Мови</span></h2>
+        <p>
+          <span data-l="en">Ukrainian: native</span><span data-l="uk">Українська: рідна</span><br />
+          <span data-l="en">English: B1 (Intermediate)</span><span data-l="uk">Англійська: B1 (Intermediate)</span>
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <!-- Work Experience -->
-      <section class="work-experience">
-        <h3 class="about-me-title">Work Experience</h3>
+  <footer class="footer">
+    <p>
+      <span data-l="en">Updated October 2026.</span><span data-l="uk">Оновлено в жовтні 2026.</span>
+      <a href="./CV_DevOps_Kyrylo_Hnelenko.pdf" download><span data-l="en">PDF version</span><span data-l="uk">Версія в PDF</span></a>
+    </p>
+  </footer>
 
-        <div class="readmore">
-          <h4 class="profession-title">
-            Senior DevOps Engineer
-            <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
-          </h4>
-          <span class="date">Apr 2025 — Present</span>
-          <p>
-            • Scaling and optimizing secure private-cloud infrastructure on VMware vCenter, ensuring high availability and reliability across environment<br>
-            • Standardizing environments (prod/stage/dev) and enforcing security-first deployment workflows across the company<br>
-            • Integrating infrastructure with new fintech and blockchain products to accelerate time-to-market and simplify operational maintenance<br>
-            • Improving monitoring, alerting, and logging coverage to boost incident response efficiency and uptime<br>
-            • Mentoring junior DevOps engineers and building strong internal DevOps culture and practices
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
+  <dialog class="contact" id="contact" aria-labelledby="contact-title">
+    <form class="contact__form" id="contact-form" novalidate>
+      <h2 id="contact-title" class="contact__title"><span data-l="en">Send a message</span><span data-l="uk">Написати повідомлення</span></h2>
+      <p class="contact__hint"><span data-l="en">It goes straight to my Telegram. I usually reply within a day.</span><span data-l="uk">Повідомлення прийде мені в Telegram. Зазвичай відповідаю протягом дня.</span></p>
+      <label><span data-l="en">Name</span><span data-l="uk">Ім'я</span>
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+      <label>Email
+        <input name="email" type="email" autocomplete="email" required />
+      </label>
+      <label><span data-l="en">Message</span><span data-l="uk">Повідомлення</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
+      <div class="contact__actions">
+        <button type="button" class="btn" id="contact-close"><span data-l="en">Cancel</span><span data-l="uk">Скасувати</span></button>
+        <button type="submit" class="btn btn--primary" id="contact-send"><span data-l="en">Send message</span><span data-l="uk">Надіслати</span></button>
+      </div>
+    </form>
+  </dialog>
 
-        <div class="readmore">
-          <h4 class="profession-title">
-            Middle DevOps Engineer
-            <a class="company" href="https://zed-pay.com/">ZedPay Financial System</a>
-          </h4>
-          <span class="date">Jul 2024 – Apr 2025</span>
-          <p>
-            • Secured and stabilized infrastructure by migrating production to a controlled environment and eliminating critical vulnerabilities<br>
-            • Built fintech-grade infrastructure with secure access, network segmentation, secrets management, and TLS<br>
-            • Deployed self-hosted GitLab and automated CI/CD across all projects<br>
-            • Implemented centralized monitoring & logging (Grafana, Prometheus, Loki)<br>
-            • Hardened systems against DDoS and improved overall service reliability
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="readmore">
-          <h4 class="profession-title">
-            Middle DevOps Engineer
-            <a class="company" href="http://customsolutions.info/">Custom Solutions</a>
-          </h4>
-          <span class="date">Sep 2023 — Jul 2024</span>
-          <p>
-            • Delivered end-to-end DevOps support for a pipeline of fintech and blockchain projects, from requirements and architecture design to infrastructure delivery and hand-off<br>
-            • Built cloud environments from scratch for multiple clients across AWS (primary), Azure, and GCP, based on project and compliance needs<br>
-            • Implemented CI/CD pipelines using tools such as Argo CD, Jenkins, GitLab CI, ensuring reliable and automated release workflows<br>
-            • Designed and deployed containerized workloads and Kubernetes clusters for scalable microservices-based systems<br>
-            • Produced full infrastructure documentation and handover packages for engineering teams, enabling seamless maintenance and onboarding
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="readmore">
-          <h4 class="profession-title">
-            Middle DevOps Engineer
-            <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
-          </h4>
-          <span class="date">Mar 2022 — Mar 2023</span>
-          <p>
-            • Led preparation of infrastructure and processes for PCI DSS certification<br>
-            • Designed and implemented security policies, access control processes, logging, backup & audit procedures<br>
-            • Maintained and expanded VMware infrastructure and internal tooling<br>
-            • Ensured uninterrupted operation of internal services and engineering systems during organizational changes
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <!-- Hidden Cards -->
-        <div class="card card--hidden readmore">
-          <h4 class="profession-title">
-            Junior DevOps Engineer
-            <a class="company" href="https://e-groshi.com/">E-Groshi Com</a>
-          </h4>
-          <span class="date">Jun 2021 — Mar 2022</span>
-          <p>
-            • Conducted cloud/vendor analysis, prepared commercial comparison, and recommended final provider aligned with business and regulatory requirements<br>
-            • Built core internal services (GitLab, AD, Jira, Confluence, monitoring, VDI for 200+ staff)<br>
-            • Assisted in critical recovery of a 6TB PostgreSQL cluster after security incident and migrated it to the new environment with zero data loss
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="card card--hidden readmore">
-          <h4 class="profession-title">
-            System Administrator
-            <a class="company" href="https://online-apteka.com.ua">Med-Service Group</a>
-          </h4>
-          <span class="date">Feb 2021 — Jun 2021</span>
-          <p>
-            • Remote administration of office equipment, telephony<br>
-            • Error-free operation of Windows OS, Windows Server, 1C<br>
-            • Data backup &amp; recovery<br>
-            • Technical support &amp; assistance<br>
-            • Working with Active Directory
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="card card--hidden readmore">
-          <h4 class="profession-title">
-            Tier 2-3 Technical Support
-            <a class="company" href="http://www.eds-group.dp.ua">EDS Group</a>
-          </h4>
-          <span class="date">Aug 2020 — Oct 2020</span>
-          <p>
-            • Service Desk, user accounts, customer support<br>
-            • Cooperation with 1C programmers, telecom providers<br>
-            • LAN troubleshooting<br>
-            • Working with ARP, TCP/IP, DHCP, DNS
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="card card--hidden readmore">
-          <h4 class="profession-title">
-            System Administrator
-            <span class="company">Vest-Dnepr</span>
-          </h4>
-          <span class="date">Mar 2019 — Aug 2020</span>
-          <p>
-            • Implementation and support of IT infrastructures<br>
-            • Administration of Windows Servers (AD, DHCP, Backup)<br>
-            • VMware ESXi (basic config, maintenance)<br>
-            • Managing LAN, portable devices
-          </p>
-          <p class="readmore-link">
-            <a href="#">...see more</a>
-          </p>
-        </div>
-
-        <div class="card card--hidden">
-          <h4 class="profession-title">
-            Chief Telecommunications Department
-            <a class="company" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
-          </h4>
-          <span class="date">Mar 2016 — Mar 2019</span>
-        </div>
-
-        <div class="card card--hidden">
-          <h4 class="profession-title">
-            Senior Engineer
-            <a class="company" href="https://www.yuzhnoye.com/en/home/">Yuzhnoye Design Office SDO</a>
-          </h4>
-          <span class="date">Oct 2015 — Mar 2016</span>
-        </div>
-
-        <button class="btm-more">
-          <i id="chevron-icon" class="fas fa-chevron-down"></i>
-          <span>More</span>
-        </button>
-      </section>
-
-      <!-- Education -->
-      <section>
-        <h3 class="about-me-title">Education</h3>
-        <div class="education">
-          <div>
-            <a class="university" href="https://www.kre.dp.ua">Koledzh Radioelektroniky Dnipro Ukraine</a>
-            <h4>Faculty of Radio Engineering</h4>
-            <span class="date">Sep 2010 — Jun 2014</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Licenses and Certificates -->
-      <section>
-        <h3 class="about-me-title">Licenses and Certificates</h3>
-        <div class="education licenses-container">
-          <div>
-            <a class="university" href="https://www.linkedin.com/learning/certificates/4ec4a14f1cbea87435aedce0cde0f46153ba162bebdf4a29659fca20ba8427a0">
-              AWS: Deployment, Provisioning, and Automation
-            </a><br>
-            <a class="university" href="https://www.linkedin.com/learning/certificates/711b0cc00acf27e746e1a45976b7d440fc4bb4133fd9d64433fd58dee455ea11">
-              Building Tools with Python
-            </a><br>
-            <a class="university" href="https://www.linkedin.com/learning/certificates/7d67967d645c075a4b304b57419b520e71d5fe9baccfdbd1687270feb038c8a2">
-              Docker Essential Training
-            </a><br>
-            <a class="university" href="https://www.linkedin.com/learning/certificates/ebd602219f87b58e7e52395f3f286eb0dac64c2c9481955ec3c31b5bec950089">
-              Git for Teams
-            </a><br>
-            <a class="university" href="https://www.linkedin.com/learning/certificates/a90e7903f5a8d5f533bb20b0f12f8e1b3294e513d10b08bc873640a5a81984a0">
-              Kubernetes: Essential Tools
-            </a><br>
-          </div>
-          <div class="card--hidden-licenses">
-            <a class="university" href="#">Linux Foundation Cert Prep: Storage Management (Ubuntu)</a><br>
-            <a class="university" href="#">Linux Foundation Cert Prep: User &amp; Group Management (Ubuntu)</a><br>
-            <a class="university" href="#">Linux: Network Configuration</a><br>
-            <a class="university" href="#">Linux: Package Management (CentOS)</a><br>
-            <a class="university" href="#">Ubuntu Linux: Essential Commands</a><br>
-          </div>
-          <button class="btm-more-licenses">
-            <i id="chevron-icon-licenses" class="fas fa-chevron-down"></i>
-            <span>More</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Courses -->
-      <section>
-        <h3 class="about-me-title">Courses</h3>
-        <div class="education courses-container">
-          <div>
-            <a class="university" href="https://projector.institute">Projector Institute</a>
-            <h4>Highload Software Architecture</h4>
-            <span class="date">Issued Jun 2024 · Expired Oct 2024</span><br><br>
-
-            <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
-            <h4>AWS Cloud Practitioner Essentials</h4>
-            <span class="date">Jan 2023</span><br><br>
-
-            <a class="university" href="https://www.udemy.com/">Udemy</a>
-            <h4>Learn to Code in Python 3: Beginner to Advanced</h4>
-            <span class="date">Jan 2023</span><br><br>
-
-            <a class="university" href="https://www.udemy.com/">Udemy</a>
-            <h4>Prometheus | The Complete Hands-On for Monitoring &amp; Alerting</h4>
-            <span class="date">Jan 2023</span><br><br>
-          </div>
-          <div class="card--hidden-courses">
-            <a class="university" href="https://www.udemy.com/">Ubuntu Linux Fundamentals: Linux Server Administration Basics</a>
-            <h4></h4>
-            <span class="date">Jan 2023</span><br><br>
-
-            <a class="university" href="https://www.training.epam.ua/#!/Home?lang=en">EPAM University Program</a>
-            <h4>DevOps Winter Program</h4>
-            <span class="date">Dec 2020</span><br><br>
-
-            <a class="university" href="https://goit.ua">GoIT</a>
-            <h4>FULLSTACK ONLINE UKRAINE</h4>
-            <span class="date">Aug 2020</span><br><br>
-
-            <a class="university" href="https://www.mil.gov.ua">Armed Forces of Ukraine</a>
-            <h4>Human Resource</h4>
-            <span class="date">Sep 2018 — May 2018</span><br><br>
-          </div>
-          <button class="btm-more-courses">
-            <i id="chevron-icon-courses" class="fas fa-chevron-down"></i>
-            <span>More</span>
-          </button>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Scripts -->
-  <script src="./js/i18n.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

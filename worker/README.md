@@ -4,7 +4,9 @@ Cloudflare Worker that relays the CV site's contact form and visit pings to Tele
 so the bot token never reaches the browser.
 
 - `POST /contact` with `{ name, email, message, website }` (`website` is a honeypot)
-- `POST /visit`
+- `POST /visit` with `{ visit }`: sends the visit message (network/ASN, location, device, referrer, UTM, repeat visits), returns a signed `ref`
+- `POST /update` with `{ ref, visit, activity }`: edits that message with time on page, scroll depth and clicks (sent via `sendBeacon` as text/plain)
+- Crawlers and link-preview bots are skipped
 - Only `https://kyrylohn.github.io` is allowed as Origin
 - Deployed at `https://cv-notify.kyrylohn.workers.dev`
 

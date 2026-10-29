@@ -59,10 +59,10 @@ async function notify(path, body = {}) {
       body: JSON.stringify(body),
       keepalive: true
     });
-    return res.ok;
+    return res.ok ? await res.json() : null;
   } catch (err) {
     console.error('Notify error:', err);
-    return false;
+    return null;
   }
 }
 
@@ -79,6 +79,7 @@ function showStatus(state, message) {
 }
 
 document.getElementById('contact-open').addEventListener('click', () => {
+  track('form');
   showStatus('', '');
   dialog.showModal();
 });
@@ -102,7 +103,7 @@ form.addEventListener('submit', async (e) => {
   sendBtn.disabled = true;
   showStatus('', t('sending'));
 
-  const ok = await notify('/contact', { name, email, message, website: data.website || '' });
+  const ok = !!await notify('/contact', { name, email, message, website: data.website || '' });
 
   sendBtn.disabled = false;
   if (ok) {
@@ -114,6 +115,100 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-/* --- Visit notification --------------------------------------------------- */
+/* --- Visit notification and on-page activity ----------------------------- */
 
-notify('/visit');
+function readVisits() {
+  try {
+    const v = JSON.parse(localStorage.getItem('cv-visits')) || {};
+    const n = (v.n || 0) + 1;
+    const first = v.first || new Date().toLocaleDateString('uk-UA');
+    localStorage.setItem('cv-visits', JSON.stringify({ n, first }));
+    return { visitNo: n, firstSeen: n > 1 ? first : '' };
+  } catch {
+    return { visitNo: 1, firstSeen: '' };
+  }
+}
+
+function referrerHost() {
+  if (!document.referrer) return '';
+  try {
+    const u = new URL(document.referrer);
+    return u.host === location.host ? '' : u.host.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+}
+
+const params = new URLSearchParams(location.search);
+const visit = {
+  ...readVisits(),
+  openedAt: new Date().toISOString(),
+  referrer: referrerHost(),
+  utm: Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign']
+    .filter((k) => params.get(k)).map((k) => [k, params.get(k)])),
+  screen: `${screen.width}×${screen.height}`,
+  languages: (navigator.languages || [navigator.language]).slice(0, 3).join(', '),
+  siteLang: root.lang
+};
+
+const activity = { visibleMs: 0, shownAt: Date.now(), scroll: 0, clicks: [] };
+let visitRef = null;
+let lastSent = '';
+
+function track(what) {
+  if (!activity.clicks.includes(what)) activity.clicks.push(what);
+}
+
+function readScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const pct = max > 0 ? Math.round((scrollY / max) * 100) : 100;
+  activity.scroll = Math.max(activity.scroll, Math.min(pct, 100));
+}
+
+addEventListener('scroll', readScroll, { passive: true });
+
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a, [data-set-lang], #theme-toggle');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+  if (href.endsWith('.pdf')) track('pdf');
+  else if (href.includes('linkedin.com')) track('linkedin');
+  else if (href.includes('github.com')) track('github');
+  else if (href.includes('t.me/')) track('telegram');
+  else if (href.startsWith('mailto:')) track('email');
+  else if (href.startsWith('tel:')) track('phone');
+  else if (a.hasAttribute('data-set-lang')) track('lang');
+  else if (a.id === 'theme-toggle') track('theme');
+});
+
+// Each time the tab is hidden (switching away, closing), update the visit message
+function sendActivity() {
+  if (!visitRef) return;
+  readScroll();
+  const seconds = Math.round((activity.visibleMs + (Date.now() - activity.shownAt)) / 1000);
+  const body = JSON.stringify({
+    ref: visitRef,
+    visit,
+    activity: { seconds, scroll: activity.scroll, clicks: activity.clicks }
+  });
+  const key = `${Math.round(seconds / 10)}|${activity.scroll}|${activity.clicks.join()}`;
+  if (key === lastSent) return;
+  lastSent = key;
+  // text/plain keeps the beacon a "simple" CORS request (no preflight)
+  navigator.sendBeacon(`${NOTIFY_URL}/update`, new Blob([body], { type: 'text/plain' }));
+}
+
+document.addEventListener('visibilitychange', () => {
+  // Count only the time the page was actually visible
+  if (document.visibilityState === 'hidden') {
+    activity.visibleMs += Date.now() - activity.shownAt;
+    activity.shownAt = Date.now();
+    sendActivity();
+  } else {
+    activity.shownAt = Date.now();
+  }
+});
+
+notify('/visit', { visit }).then((res) => {
+  visitRef = res && res.ref;
+});

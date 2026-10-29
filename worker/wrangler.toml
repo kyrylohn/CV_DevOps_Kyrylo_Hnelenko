@@ -1,0 +1,9 @@
+name = "cv-notify"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+CHAT_ID = "-4896754848"
+ALLOWED_ORIGINS = "https://kyrylohn.github.io"
+
+# BOT_TOKEN is a secret: npx wrangler secret put BOT_TOKEN

@@ -3,13 +3,8 @@
  * Author: Kyrylo Hnelenko
  */
 
-const CONFIG = {
-  TELEGRAM: {
-    BOT_TOKEN: '8472754597:AAHCkQVxbosnVu6RM0U4HyL63DWlurjEziY',
-    CHAT_ID: '-4896754848',
-    API_URL: 'https://api.telegram.org/bot'
-  }
-};
+// Cloudflare Worker that relays to Telegram (source in worker/); the bot token lives there
+const NOTIFY_URL = 'https://cv-notify.kyrylohn.workers.dev';
 
 const TEXT = {
   en: {
@@ -54,23 +49,22 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
   localStorage.setItem('cv-theme', next);
 });
 
-/* --- Telegram ------------------------------------------------------------- */
+/* --- Notifications ------------------------------------------------------- */
 
-async function sendTelegram(text) {
+async function notify(path, body = {}) {
   try {
-    const res = await fetch(`${CONFIG.TELEGRAM.API_URL}${CONFIG.TELEGRAM.BOT_TOKEN}/sendMessage`, {
+    const res = await fetch(`${NOTIFY_URL}${path}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CONFIG.TELEGRAM.CHAT_ID, text, parse_mode: 'HTML' })
+      body: JSON.stringify(body),
+      keepalive: true
     });
     return res.ok;
   } catch (err) {
-    console.error('Telegram error:', err);
+    console.error('Notify error:', err);
     return false;
   }
 }
-
-const escapeHtml = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 
 /* --- Contact dialog ------------------------------------------------------- */
 
@@ -108,16 +102,7 @@ form.addEventListener('submit', async (e) => {
   sendBtn.disabled = true;
   showStatus('', t('sending'));
 
-  const ok = await sendTelegram(
-`📧 Нове повідомлення з сайту CV!
-
-👤 Ім'я: ${escapeHtml(name)}
-📧 Email: ${escapeHtml(email)}
-
-💬 Повідомлення:
-${escapeHtml(message)}
-
-🕐 Час: ${new Date().toLocaleString('uk-UA')}`);
+  const ok = await notify('/contact', { name, email, message, website: data.website || '' });
 
   sendBtn.disabled = false;
   if (ok) {
@@ -131,32 +116,4 @@ ${escapeHtml(message)}
 
 /* --- Visit notification --------------------------------------------------- */
 
-function browserInfo() {
-  const ua = navigator.userAgent;
-  if (/Edg\//.test(ua)) return 'Edge';
-  if (/OPR\//.test(ua)) return 'Opera';
-  if (/Firefox\//.test(ua)) return 'Firefox';
-  if (/Chrome\//.test(ua)) return 'Chrome';
-  if (/Safari\//.test(ua)) return 'Safari';
-  return 'Unknown';
-}
-
-async function notifyVisit() {
-  let v = {};
-  try {
-    const res = await fetch('https://ipapi.co/json/');
-    if (res.ok) v = await res.json();
-  } catch (err) {
-    console.error('Visitor data error:', err);
-  }
-  await sendTelegram(
-`📄 Сторінку відкрито!
-<pre>
-🌐 Браузер: ${browserInfo()}
-🌐 IP: ${v.ip || 'Unknown'}
-🌐 Локація: ${v.city || 'Unknown'}, ${v.country_name || 'Unknown'}
-</pre>
-🕐 Час: ${new Date().toLocaleString('uk-UA')}`);
-}
-
-notifyVisit();
+notify('/visit');

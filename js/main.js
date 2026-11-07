@@ -220,19 +220,19 @@ document.addEventListener('visibilitychange', () => {
 });
 
 /*
- * Report the visit only once a person is plausibly looking at the page:
- * 3 s of visible time, or a real interaction. Prerendered pages, background
- * tabs that are never opened, and scanners that load and leave send nothing.
+ * Report the visit only after a real interaction: wheel, touch, click or key.
+ * Link scanners and crawlers load the page, wait and render it, but don't
+ * interact; programmatic scrolling and synthetic events (isTrusted=false)
+ * don't count. Prerendered or never-opened tabs send nothing.
  */
-const HUMAN_MS = 3000;
+const HUMAN_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
 let visitSent = false;
-let humanTimer = null;
 
-function reportVisit() {
-  if (visitSent || isOwner || isAutomated) return;
+function reportVisit(e) {
+  if (visitSent || !e.isTrusted || document.visibilityState !== 'visible') return;
   visitSent = true;
-  clearTimeout(humanTimer);
   HUMAN_EVENTS.forEach((ev) => removeEventListener(ev, reportVisit, true));
+  if (isOwner || isAutomated) return;
   Object.assign(visit, readVisits());
   notify('/visit', { visit }).then((res) => {
     visitRef = res && res.ref;
@@ -241,12 +241,4 @@ function reportVisit() {
   });
 }
 
-function armHumanTimer() {
-  clearTimeout(humanTimer);
-  if (!visitSent && document.visibilityState === 'visible') humanTimer = setTimeout(reportVisit, HUMAN_MS);
-}
-
-const HUMAN_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
 HUMAN_EVENTS.forEach((ev) => addEventListener(ev, reportVisit, { capture: true, passive: true }));
-document.addEventListener('visibilitychange', armHumanTimer);
-armHumanTimer();

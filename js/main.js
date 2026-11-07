@@ -140,8 +140,17 @@ function referrerHost() {
 }
 
 const params = new URLSearchParams(location.search);
+
+// Own visits: open the site once with ?me=1 on each device (?me=0 undoes it)
+if (params.has('me')) {
+  if (params.get('me') === '0') localStorage.removeItem('cv-owner');
+  else localStorage.setItem('cv-owner', '1');
+}
+const isOwner = localStorage.getItem('cv-owner') === '1';
+// Headless browsers and automation (link scanners, crawlers that run JS)
+const isAutomated = navigator.webdriver === true || /HeadlessChrome|PhantomJS|Electron/.test(navigator.userAgent);
+
 const visit = {
-  ...readVisits(),
   openedAt: new Date().toISOString(),
   referrer: referrerHost(),
   utm: Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign']
@@ -152,6 +161,7 @@ const visit = {
 };
 
 const activity = { visibleMs: 0, shownAt: Date.now(), scroll: 0, clicks: [] };
+// Visible time only: a page loaded hidden (prerender, background tab) starts at 0
 let visitRef = null;
 let lastSent = '';
 
@@ -209,6 +219,34 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-notify('/visit', { visit }).then((res) => {
-  visitRef = res && res.ref;
-});
+/*
+ * Report the visit only once a person is plausibly looking at the page:
+ * 3 s of visible time, or a real interaction. Prerendered pages, background
+ * tabs that are never opened, and scanners that load and leave send nothing.
+ */
+const HUMAN_MS = 3000;
+let visitSent = false;
+let humanTimer = null;
+
+function reportVisit() {
+  if (visitSent || isOwner || isAutomated) return;
+  visitSent = true;
+  clearTimeout(humanTimer);
+  HUMAN_EVENTS.forEach((ev) => removeEventListener(ev, reportVisit, true));
+  Object.assign(visit, readVisits());
+  notify('/visit', { visit }).then((res) => {
+    visitRef = res && res.ref;
+    // The tab may have been hidden while the request was in flight
+    if (visitRef && document.visibilityState === 'hidden') sendActivity();
+  });
+}
+
+function armHumanTimer() {
+  clearTimeout(humanTimer);
+  if (!visitSent && document.visibilityState === 'visible') humanTimer = setTimeout(reportVisit, HUMAN_MS);
+}
+
+const HUMAN_EVENTS = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+HUMAN_EVENTS.forEach((ev) => addEventListener(ev, reportVisit, { capture: true, passive: true }));
+document.addEventListener('visibilitychange', armHumanTimer);
+armHumanTimer();
